@@ -2,9 +2,10 @@
 #ifndef CEXCEPTION_H
 #define CEXCEPTION_H
 
-#define ERR_POINTEUR_NULL 1
-#define ERR_TAB_DEPPASSE  2
-#define ERR_DIV_PAR_0     3
+#define POINTEUR_NULL   1
+#define TAB_DEPPASSE    2
+#define DIV_PAR_0       3
+#define BAD_SIZE_OF_MAT 4
 
 #include <string>
 #include <vector>
@@ -58,4 +59,3 @@ private:
 
 #endif // CEXCEPTION_H
 
-#endif
