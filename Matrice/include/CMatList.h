@@ -12,7 +12,7 @@
 class CMatList
 {
 private:
-	CMatrix<NType> pMTLList[] = new CMatrix[]();
+	CMatrix<NType> pMTLList;
 
 	unsigned int uiMTLLength;
 

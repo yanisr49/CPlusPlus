@@ -8,6 +8,7 @@
 #include <assert.h>
 #include "CException.h"
 
+using namespace std;
 
 template <class NType>
 class CMatrix
@@ -21,11 +22,11 @@ private:
     NType **ppMATMatrix;
 
 public:
-	 CMatrix(unsigned int uiRow, unsigned int uiCol, NType **ppTab);
+    CMatrix(unsigned int uiRow, unsigned int uiCol, NType **ppTab);
 
-	 CMatrix(const CMatrix & MATParam);
+	CMatrix(const CMatrix & MATParam);
 
-	 CMatrix(unsigned int uiRow, unsigned int uiCol);
+	CMatrix(unsigned int uiRow, unsigned int uiCol);
 
 	CMatrix& operator*(double c);
 
