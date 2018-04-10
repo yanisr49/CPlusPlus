@@ -1,6 +1,10 @@
 # depslib dependency file v1.0
-1446671344 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\main.cpp
+1523349775 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\main.cpp
 	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<CMatList.h>
+	<CLoad.h>
 
 1523345147 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cexception.cpp
 	"CException.h"
@@ -17,6 +21,9 @@
 	<iostream>
 	<assert.h>
 
+<<<<<<< HEAD
+1523348004 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cload.cpp
+=======
 1523006639 D
 
 1523006317 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\main.cpp
@@ -25,22 +32,23 @@
 1523006317 
 
 1523346298 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cload.cpp
+>>>>>>> origin/master
 	<string>
 	<vector>
 	<list>
 	<iostream>
 	<assert.h>
-	"CLoad.h"
 
-1523346291 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cload.h
+1523351679 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cload.h
 	<string>
 	<vector>
 	<list>
 	<iostream>
 	<assert.h>
+	<fstream>
 	"CMatList.h"
 
-1523345520 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cmatlist.h
+1523347567 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cmatlist.h
 	<string>
 	<vector>
 	<list>
@@ -56,6 +64,9 @@
 	<assert.h>
 	"CException.h"
 
+<<<<<<< HEAD
+1523346374 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cmatlist.cpp
+=======
 1523294089 cebdc64755278daeb4b308f7ec3dbc25dd9a1
 
 1523345494 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cexception.cpp
@@ -106,6 +117,7 @@
 	"CException.h"
 
 1523347386 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cmatlist.cpp
+>>>>>>> origin/master
 	<string>
 	<vector>
 	<list>
@@ -113,5 +125,9 @@
 	<assert.h>
 	"CMatList.h"
 
+<<<<<<< HEAD
+1523006508 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cmatrix.cpp
+=======
 1523006448 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cmatrix.cpp
+>>>>>>> origin/master
 
