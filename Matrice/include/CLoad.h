@@ -10,10 +10,11 @@
 #include "CMatList.h"
 #include "CMatrix.h"
 
+template <typename NType>
 class CLoad
 {
 private:
-	CMatList pLODMatList;
+	CMatList<NType> pLODMatList;
 
 	CMatList cMatList;
 
