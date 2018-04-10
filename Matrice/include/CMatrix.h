@@ -22,17 +22,75 @@ private:
     NType **ppMATMatrix;
 
 public:
+
+    /** \brief Constructeur à 3 arguments
+     *
+     *E:
+     * \param uiRow unsigned int le nombre de lignes
+     * \param uiCol unsigned int le ombre de colonnes
+     * \param ppTab NType** le tableau de deux dimensions représentant les données de la matrices (de type Ntype)
+     *Necessite: uiRow et uiCol correspndent à la taille du tableau ppTab
+     *S : Rien
+     *Entraine : (L'objet est initialisé)
+     */
     CMatrix(unsigned int uiRow, unsigned int uiCol, NType **ppTab);
 
+
+
+    /** \brief Constructeur de recopie
+     *
+     *E:
+     * \param MATParam CMatrix la matrice à recopier
+     *Necessite : Néant
+     *S : Rien
+     *Entraine : (L'objet est initialisé en une copie de MATParam)
+     */
 	CMatrix(const CMatrix & MATParam);
 
+
+    /** \brief Constructeur à 2 arguments
+     *
+     *E:
+     * \param uiRow unsigned int le nombre de lignes
+     * \param uiCol unsigned int le ombre de colonnes
+     *Necessite: Néant
+     *S : Rien
+     *Entraine : (L'objet est initialisé avec une matrice de 0)
+     */
 	CMatrix(unsigned int uiRow, unsigned int uiCol);
 
+	/** \brief Surchage de l'opérateur =
+     *
+     *E:
+     * \param MATParam CMatrix la matrice à recopier
+     *Necessite : Néant
+     *S : Rien
+     *Entraine : (L'objet devient une copie de MATParam)
+     */
     void operator=(CMatrix MATParam);
 
+    /** \brief Surchage de l'opérateur *
+     *
+     *E:
+     *\param dc double le double à multiplier
+     *Necessite : Néant
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne le produit de la matrice par dc)
+     */
 	CMatrix& operator*(double dc);
 
 
+    /** \brief Surchage de l'opérateur /
+     *
+     *E:
+     *\param dc double le double à diviser
+     *Necessite : Néant
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne la division de la matrice par dc) OU (Exception : dénominateur nul
+     *dc == 0)
+     */
 	CMatrix operator/(double dc);
 
 	CMatrix operator+(CMatrix MATParam);
@@ -51,6 +109,17 @@ public:
 
 //Constructors and destructor
 
+
+/** \brief Constructeur à 3 arguments
+     *
+     *E:
+     * \param uiRow unsigned int le nombre de lignes
+     * \param uiCol unsigned int le ombre de colonnes
+     * \param ppTab NType** le tableau de deux dimensions représentant les données de la matrices (de type Ntype)
+     *Necessite: uiRow et uiCol correspndent à la taille du tableau ppTab
+     *S : Rien
+     *Entraine : (L'objet est initialisé)
+     */
 template <class NType>
 CMatrix<NType>::CMatrix(unsigned int uiRow, unsigned int uiCol, NType **ppTab)
 {
@@ -59,6 +128,14 @@ CMatrix<NType>::CMatrix(unsigned int uiRow, unsigned int uiCol, NType **ppTab)
 	ppMATMatrix = ppTab;
 }
 
+/** \brief Constructeur de recopie
+     *
+     *E:
+     * \param MATParam CMatrix la matrice à recopier
+     *Necessite : Néant
+     *S : Rien
+     *Entraine : (L'objet est initialisé en une copie de MATParam)
+     */
 template <class NType>
  CMatrix<NType>::CMatrix(const CMatrix & MATParam)
 {
@@ -75,6 +152,15 @@ template <class NType>
 	 ppMATMatrix = ppTab;
 }
 
+/** \brief Constructeur à 2 arguments
+     *
+     *E:
+     * \param uiRow unsigned int le nombre de lignes
+     * \param uiCol unsigned int le ombre de colonnes
+     *Necessite: Néant
+     *S : Rien
+     *Entraine : (L'objet est initialisé avec une matrice de 0)
+     */
  template <class NType>
  CMatrix<NType>::CMatrix(unsigned int uiRow, unsigned int uiCol)
 {
@@ -93,7 +179,14 @@ template <class NType>
 
 
 //methods
-
+/** \brief Surchage de l'opérateur =
+     *
+     *E:
+     * \param MATParam CMatrix la matrice à recopier
+     *Necessite : Néant
+     *S : Rien
+     *Entraine : (L'objet devient une copie de MATParam)
+     */
 template <class NType>
 void CMatrix<NType>::operator=(CMatrix MATParam)
 {
@@ -111,7 +204,15 @@ void CMatrix<NType>::operator=(CMatrix MATParam)
 	 ppMATMatrix = ppTab;
 }
 
-
+/** \brief Surchage de l'opérateur *
+     *
+     *E:
+     *\param dc double le double à multiplier
+     *Necessite : Néant
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne le produit de la matrice par dc)
+     */
  template <class NType>
 CMatrix<NType>& CMatrix<NType>::operator*(double dc)
 {
@@ -141,6 +242,16 @@ CMatrix<NType> operator*(double dc, CMatrix<NType> MATParam)
 	return new CMatrix<NType>(MATParam.uiMATRow,MATParam.uiMATCol,ppTab);
 }
 
+/** \brief Surchage de l'opérateur /
+     *
+     *E:
+     *\param dc double le double à diviser
+     *Necessite : Néant
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne la division de la matrice par dc) OU (Exception : dénominateur nul
+     *dc == 0)
+     */
 template <class NType>
 CMatrix<NType> CMatrix<NType>::operator/(double dc)
 {
