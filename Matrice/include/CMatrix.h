@@ -28,10 +28,12 @@ public:
 
 	CMatrix(unsigned int uiRow, unsigned int uiCol);
 
-	CMatrix& operator*(double c);
+    void operator=(CMatrix MATParam);
+
+	CMatrix& operator*(double dc);
 
 
-	CMatrix operator/(double c);
+	CMatrix operator/(double dc);
 
 	CMatrix operator+(CMatrix MATParam);
 
@@ -43,9 +45,11 @@ public:
 
 	CMatrix MATTranspose();
 
+
+
 };
 
-//Definition des méthodes
+//Constructors and destructor
 
 template <class NType>
 CMatrix<NType>::CMatrix(unsigned int uiRow, unsigned int uiCol, NType **ppTab)
@@ -58,7 +62,17 @@ CMatrix<NType>::CMatrix(unsigned int uiRow, unsigned int uiCol, NType **ppTab)
 template <class NType>
  CMatrix<NType>::CMatrix(const CMatrix & MATParam)
 {
-
+    uiMATRow = MATParam.uiMATRow;
+	uiMATCol = MATParam.uiMATCol;
+	NType ppTab[uiMATRow][uiMATCol];
+	 for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
+	 {
+		 for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
+		 {
+			 ppTab[uiLoopRow][uiLoopCol] = MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
+		 }
+	 }
+	 ppMATMatrix = ppTab;
 }
 
  template <class NType>
@@ -75,32 +89,52 @@ template <class NType>
 		 }
 	 }
 	 ppMATMatrix = ppTab;
-
 }
 
+
+//methods
+
+template <class NType>
+void CMatrix<NType>::operator=(CMatrix MATParam)
+{
+    uiMATRow = MATParam.uiMATRow;
+	uiMATCol = MATParam.uiMATCol;
+
+	NType ppTab[uiMATRow][uiMATCol];
+	 for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
+	 {
+		 for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
+		 {
+			 ppTab[uiLoopRow][uiLoopCol] = MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
+		 }
+	 }
+	 ppMATMatrix = ppTab;
+}
+
+
  template <class NType>
-CMatrix<NType>& CMatrix<NType>::operator*(double c)
+CMatrix<NType>& CMatrix<NType>::operator*(double dc)
 {
 	NType **ppTab = ppMATMatrix;
 	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoopRow][uiLoopCol] *= c;
+			ppTab[uiLoopRow][uiLoopCol] *= dc;
 		}
 	}
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 }
 
 template <class NType>
-CMatrix<NType> operator*(double c, CMatrix<NType> MATParam)
+CMatrix<NType> operator*(double dc, CMatrix<NType> MATParam)
 {
 	NType **ppTab = MATParam.ppMATMatrix;
 	for (unsigned int uiLoopRow = 0; uiLoopRow < MATParam.uiMATRow; uiLoopRow++)
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < MATParam.uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoopRow][uiLoopCol] *= c;
+			ppTab[uiLoopRow][uiLoopCol] *= dc;
 		}
 	}
 
@@ -108,9 +142,9 @@ CMatrix<NType> operator*(double c, CMatrix<NType> MATParam)
 }
 
 template <class NType>
-CMatrix<NType> CMatrix<NType>::operator/(double c)
+CMatrix<NType> CMatrix<NType>::operator/(double dc)
 {
-    if(c == 0)
+    if(dc == 0)
     {
         throw new CException(DIV_PAR_0);;
     }
@@ -120,7 +154,7 @@ CMatrix<NType> CMatrix<NType>::operator/(double c)
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoopRow][uiLoopCol] /= c;
+			ppTab[uiLoopRow][uiLoopCol] /= dc;
 		}
 	}
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
