@@ -8,20 +8,15 @@
 #include <assert.h>
 
 #include "CMatList.h"
-#include "CMatrix.h"
 
-template <typename NType>
+template <class NType>
 class CLoad
 {
 private:
-	CMatList<NType> pLODMatList;
-
-	CMatList cMatList;
+    char ** pcLODFilename;
 
 public:
-	void LODLoadFromFile(char pcFilename[]);
-
-	CMatrix LODParser();
-
+	CMatList<NType> LODLoadFromFile();
+    void addFilename(char * pcFilename);
 };
 #endif

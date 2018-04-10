@@ -17,3 +17,35 @@
 	<iostream>
 	<assert.h>
 
+1523346298 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cload.cpp
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CLoad.h"
+
+1523346291 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cload.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CMatList.h"
+
+1523345520 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cmatlist.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CMatrix.h"
+
+1523294089 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cmatrix.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CException.h"
+

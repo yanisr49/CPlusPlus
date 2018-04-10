@@ -6,13 +6,14 @@
 
 #include "CLoad.h"
 
-
-void CLoad::LODLoadFromFile(char pcFilename[])
+template <class NType>
+CMatList<NType> LODLoadFromFile()
 {
 
 }
 
-CMatrix CLoad::LODParser()
+template <class NType>
+void CLoad<NType>::addFilename(char * pcFilename)
 {
-	return 0;
+
 }

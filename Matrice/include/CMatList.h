@@ -9,7 +9,7 @@
 
 #include "CMatrix.h"
 
-template <typename NType>
+template <class NType>
 class CMatList
 {
 private:
