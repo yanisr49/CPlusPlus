@@ -6,28 +6,33 @@
 
 #include "CMatList.h"
 
-
-void CMatList::MTLadd(CMatrix MATParam)
+template <class NType>
+void CMatList<NType>::MTLadd(CMatrix<NType> MATParam)
 {
 }
 
-void CMatList::MTLMultByConst(double C)
+template <class NType>
+void CMatList<NType>::MTLMultByConst(double C)
 {
 }
 
-void CMatList::MTLDivByConst(double C)
+template <class NType>
+void CMatList<NType>::MTLDivByConst(double C)
 {
 }
 
-void CMatList::MTLSum()
+template <class NType>
+void CMatList<NType>::MTLSum()
 {
 }
 
-void CMatList::MTLAltPlusMinus()
+template <class NType>
+void CMatList<NType>::MTLAltPlusMinus()
 {
 }
 
-void CMatList::MTLProduct()
+template <class NType>
+void CMatList<NType>::MTLProduct()
 {
 }
 
