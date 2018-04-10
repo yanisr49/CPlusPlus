@@ -9,17 +9,16 @@
 
 #include "CMatrix.h"
 
+template <typename NType>
 class CMatList
 {
 private:
-	CMatrix<NType> pMTLList;
+	CMatrix<NType> pMTLList[];
 
 	unsigned int uiMTLLength;
 
-	CMatrix cMatrix[];
-
 public:
-	void MTLadd(CMatrix MATParam);
+	void MTLadd(CMatrix<NType> MATParam);
 
 	void MTLMultByConst(double C);
 
