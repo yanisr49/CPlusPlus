@@ -67,11 +67,11 @@ template <class NType>
 	 uiMATRow = uiRow;
 	 uiMATCol = uiCol;
 	 NType ppTab[uiRow][uiCol];
-	 for (unsigned int uiLoop = 0; uiLoop < uiRow; uiLoop++)
+	 for (unsigned int uiLoopRow = 0; uiLoopRow < uiRow; uiLoopRow++)
 	 {
-		 for (unsigned int uiLoop2 = 0; uiLoop2 < uiCol; uiLoop2++)
+		 for (unsigned int uiLoopCol = 0; uiLoopCol < uiCol; uiLoopCol++)
 		 {
-			 ppTab[uiLoop][uiLoop2] = 0;
+			 ppTab[uiLoopRow][uiLoopCol] = 0;
 		 }
 	 }
 	 ppMATMatrix = ppTab;
@@ -82,11 +82,11 @@ template <class NType>
 CMatrix<NType>& CMatrix<NType>::operator*(double c)
 {
 	NType **ppTab = ppMATMatrix;
-	for (unsigned int uiLoop = 0; uiLoop < uiMATRow; uiLoop++)
+	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
-		for (unsigned int uiLoop2 = 0; uiLoop2 < uiMATCol; uiLoop2++)
+		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoop][uiLoop2] *= c;
+			ppTab[uiLoopRow][uiLoopCol] *= c;
 		}
 	}
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
@@ -96,11 +96,11 @@ template <class NType>
 CMatrix<NType> operator*(double c, CMatrix<NType> MATParam)
 {
 	NType **ppTab = MATParam.ppMATMatrix;
-	for (unsigned int uiLoop = 0; uiLoop < MATParam.uiMATRow; uiLoop++)
+	for (unsigned int uiLoopRow = 0; uiLoopRow < MATParam.uiMATRow; uiLoopRow++)
 	{
-		for (unsigned int uiLoop2 = 0; uiLoop2 < MATParam.uiMATCol; uiLoop2++)
+		for (unsigned int uiLoopCol = 0; uiLoopCol < MATParam.uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoop][uiLoop2] *= c;
+			ppTab[uiLoopRow][uiLoopCol] *= c;
 		}
 	}
 
@@ -116,11 +116,11 @@ CMatrix<NType> CMatrix<NType>::operator/(double c)
     }
 
 	NType **ppTab = ppMATMatrix;
-	for (unsigned int uiLoop = 0; uiLoop < uiMATRow; uiLoop++)
+	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
-		for (unsigned int uiLoop2 = 0; uiLoop2 < uiMATCol; uiLoop2++)
+		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoop][uiLoop2] /= c;
+			ppTab[uiLoopRow][uiLoopCol] /= c;
 		}
 	}
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
@@ -133,11 +133,11 @@ CMatrix<NType> CMatrix<NType>::operator+(CMatrix MATParam)
         throw new CException(BAD_SIZE_OF_MAT);
 
     NType **ppTab = ppMATMatrix;
-	for (unsigned int uiLoop = 0; uiLoop < uiMATRow; uiLoop++)
+	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
-		for (unsigned int uiLoop2 = 0; uiLoop2 < uiMATCol; uiLoop2++)
+		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoop][uiLoop2] += MATParam.ppMATMatrix[uiLoop][uiLoop2];
+			ppTab[uiLoopRow][uiLoopCol] += MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
 		}
 	}
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
@@ -161,11 +161,11 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
         throw new CException(BAD_SIZE_OF_MAT);
 
     NType **ppTab = ppMATMatrix;//verifier si ça ne modifie pas un des params
-	for (unsigned int uiLoop = 0; uiLoop < uiMATRow; uiLoop++)
+	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
-		for (unsigned int uiLoop2 = 0; uiLoop2 < uiMATCol; uiLoop2++)
+		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoop][uiLoop2] -= MATParam.ppMATMatrix[uiLoop][uiLoop2];
+			ppTab[uiLoopRow][uiLoopCol] -= MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
 		}
 	}
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
@@ -177,19 +177,12 @@ CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
 	if(uiMATCol != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
 
-    NType **ppTab = ppMATMatrix;
-
     unsigned int uiRowSize = uiMATRow;
     unsigned int uiColSize = MATParam.uiMATCol;
 
+    CMatrix *pMATResult = new CMatrix(uiRowSize, uiColSize);
+
     //initialisation of ppTab;
-    for (unsigned int uiLoopRow = 0; uiLoopRow < uiRowSize; uiLoopRow++)
-	{
-		for (unsigned int uiLoopCol = 0; uiLoopCol < uiColSize; uiLoopCol++)
-		{
-			ppTab[uiLoopRow][uiLoopCol] = 0;
-		}
-	}
 
     for (unsigned int uiLoopRow = 0; uiLoopRow < uiRowSize; uiLoopRow++)
 	{
@@ -197,22 +190,42 @@ CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
 		{
 			for(unsigned int uiLoop = 0; uiLoop < uiMATCol; uiLoop++)
             {
-                ppTab[uiLoopRow][uiLoopCol] += ppMATMatrix[uiLoopRow][uiLoop] * MATParam.ppMATMatrix[uiLoop][uiLoopCol];
+                pMATResult.ppMATMatrix[uiLoopRow][uiLoopCol] += ppMATMatrix[uiLoopRow][uiLoop] * MATParam.ppMATMatrix[uiLoop][uiLoopCol];
             }
 		}
 	}
+	return pMATResult; //Verifier si on ne doit pas faire un retour par référence (ou un truc comme ça)
 
 }
 
 template <class NType>
 void CMatrix<NType>::MATPrint()
 {
+    for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
+	{
+		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
+		{
+			cout << ppMATMatrix[uiLoopRow][uiLoopCol] << " ";
+
+		}
+		cout << endl;
+	}
 }
 
 template <class NType>
 CMatrix<NType> CMatrix<NType>::MATTranspose()
 {
-	return 0;
+
+    CMatrix *pMATResult = new CMatrix(uiMATCol, uiMATRow);
+
+	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
+	{
+		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
+		{
+			pMATResult.ppMATMatrix[uiLoopCol][uiLoopRow] = ppMATMatrix[uiLoopRow][uiLoopCol];
+		}
+	}
+	return pMATResult;
 }
 
 
