@@ -160,7 +160,7 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 	 if(uiMATCol != MATParam.uiMATCol || uiMATRow != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
 
-    NType **ppTab = ppMATMatrix;
+    NType **ppTab = ppMATMatrix;//verifier si ça ne modifie pas un des params
 	for (unsigned int uiLoop = 0; uiLoop < uiMATRow; uiLoop++)
 	{
 		for (unsigned int uiLoop2 = 0; uiLoop2 < uiMATCol; uiLoop2++)
@@ -174,7 +174,34 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 template <class NType>
 CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
 {
-	return 0;
+	if(uiMATCol != MATParam.uiMATRow)
+        throw new CException(BAD_SIZE_OF_MAT);
+
+    NType **ppTab = ppMATMatrix;
+
+    unsigned int uiRowSize = uiMATRow;
+    unsigned int uiColSize = MATParam.uiMATCol;
+
+    //initialisation of ppTab;
+    for (unsigned int uiLoopRow = 0; uiLoopRow < uiRowSize; uiLoopRow++)
+	{
+		for (unsigned int uiLoopCol = 0; uiLoopCol < uiColSize; uiLoopCol++)
+		{
+			ppTab[uiLoopRow][uiLoopCol] = 0;
+		}
+	}
+
+    for (unsigned int uiLoopRow = 0; uiLoopRow < uiRowSize; uiLoopRow++)
+	{
+		for (unsigned int uiLoopCol = 0; uiLoopCol < uiColSize; uiLoopCol++)
+		{
+			for(unsigned int uiLoop = 0; uiLoop < uiMATCol; uiLoop++)
+            {
+                ppTab[uiLoopRow][uiLoopCol] += ppMATMatrix[uiLoopRow][uiLoop] * MATParam.ppMATMatrix[uiLoop][uiLoopCol];
+            }
+		}
+	}
+
 }
 
 template <class NType>
