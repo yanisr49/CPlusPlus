@@ -1,16 +1,7 @@
-<<<<<<< HEAD
 TypeMatrice=double
 NBLignes=2
 NBColonnes=3
 Matrice=[
 5 3 6
 1 -2 8
-=======
-TypeMatrice=double
-NBLignes=2
-NBColonnes=3
-Matrice=[
-5 3 6
-1 -2 8
->>>>>>> 038852243f194254dc8a55b9a872b8c004daede0
 ]

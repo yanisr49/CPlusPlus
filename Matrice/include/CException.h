@@ -1,5 +1,4 @@
 
-
 #ifndef CEXCEPTION_H
 #define CEXCEPTION_H
 
@@ -58,4 +57,6 @@ protected:
 private:
 	unsigned int uiEXCValeur;
 };
-#endif
+
+#endif // CEXCEPTION_H
+

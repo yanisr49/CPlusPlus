@@ -1,4 +1,3 @@
-
 #ifndef C_MATRIX_H
 #define C_MATRIX_H
 
@@ -7,6 +6,7 @@
 #include <list>
 #include <iostream>
 #include <assert.h>
+#include <stdlib.h>
 #include "CException.h"
 
 using namespace std;
@@ -23,7 +23,8 @@ private:
     NType **ppMATMatrix;
 
 public:
-    //constructeurs et destructeur
+
+
     /** \brief Constructeur à 3 arguments
      *
      *E:
@@ -68,20 +69,7 @@ public:
      *S : Rien
      *Entraine : (L'objet devient une copie de MATParam)
      */
-
-     //getters et setters
-     unsigned int MATgetRow()
-     {
-         return uiMATRow;
-     }
-
-     unsigned int MATgetCol()
-     {
-         return uiMATCol;
-     }
-
-     //methods
-    void operator=(CMatrix MATParam);
+    void operator=(CMatrix<NType> * MATParam);
 
     /** \brief Surchage de l'opérateur *
      *
@@ -107,7 +95,7 @@ public:
      */
 	CMatrix operator/(double dc);
 
-	CMatrix operator+(CMatrix MATParam);
+	CMatrix operator+(CMatrix<NType> MATParam);
 
 	CMatrix operator-(CMatrix MATParam);
 
@@ -117,24 +105,12 @@ public:
 
 	CMatrix MATTranspose();
 
+    unsigned int getRow();
+    unsigned int getCol();
+
 };
 
-/** \brief Surchage de l'opérateur *
-     *Cette surchage ne fait pas partie de la classe CMatrix
-     *elle sert à la commutativitée de l'opération *
-     *E:
-     *\param dc double le double à multiplier
-     *\param MATParam CMatrix la matrice à multiplier
-     *Necessite : Néant
-     *S :
-     *\return CMatrix
-     *Entraine : (Retourne le produit de la MATParam par dc)
-     */
-template <class NType>
-CMatrix<NType> operator*(double dc, CMatrix<NType> MATParam);
-
 //Constructors and destructor
-
 
 /** \brief Constructeur à 3 arguments
      *
@@ -168,7 +144,7 @@ template <class NType>
     uiMATRow = MATParam.uiMATRow;
 	uiMATCol = MATParam.uiMATCol;
 
-    NType ** ppMATMatrix = static_cast< NType** >(malloc(uiMATRow * sizeof(NType *)));
+    ppMATMatrix = static_cast< NType** >(malloc(uiMATRow * sizeof(NType *)));
     for(unsigned int i=0; i<uiMATRow; i++)
         ppMATMatrix[i] = static_cast< NType* >(malloc(uiMATCol * sizeof(NType)));
 
@@ -221,10 +197,10 @@ template <class NType>
      *Entraine : (L'objet devient une copie de MATParam)
      */
 template <class NType>
-void CMatrix<NType>::operator=(CMatrix<NType> MATParam)
+void CMatrix<NType>::operator=(CMatrix<NType> * MATParam)
 {
-    uiMATRow = MATParam.uiMATRow;
-	uiMATCol = MATParam.uiMATCol;
+    uiMATRow = MATParam->getRow();
+	uiMATCol = MATParam->getCol();
 
     NType ** ppTab = static_cast< NType** >(malloc(uiMATRow * sizeof(NType *)));
     for(unsigned int i=0; i<uiMATRow; i++)
@@ -234,12 +210,11 @@ void CMatrix<NType>::operator=(CMatrix<NType> MATParam)
 	 {
 		 for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		 {
-			 ppTab[uiLoopRow][uiLoopCol] = MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
+			 ppTab[uiLoopRow][uiLoopCol] = MATParam->ppMATMatrix[uiLoopRow][uiLoopCol];
 		 }
 	 }
 	 ppMATMatrix = ppTab;
 }
-
 
 /** \brief Surchage de l'opérateur *
      *
@@ -264,7 +239,20 @@ CMatrix<NType>& CMatrix<NType>::operator*(double dc)
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 }
 
+template <class NType>
+CMatrix<NType> operator*(double dc, CMatrix<NType> MATParam)
+{
+	NType **ppTab = MATParam.ppMATMatrix;
+	for (unsigned int uiLoopRow = 0; uiLoopRow < MATParam.uiMATRow; uiLoopRow++)
+	{
+		for (unsigned int uiLoopCol = 0; uiLoopCol < MATParam.uiMATCol; uiLoopCol++)
+		{
+			ppTab[uiLoopRow][uiLoopCol] *= dc;
+		}
+	}
 
+	return new CMatrix<NType>(MATParam.uiMATRow,MATParam.uiMATCol,ppTab);
+}
 
 /** \brief Surchage de l'opérateur /
      *
@@ -273,7 +261,7 @@ CMatrix<NType>& CMatrix<NType>::operator*(double dc)
      *Necessite : Néant
      *S :
      *\return CMatrix
-     *Entraine : (Retourne la division de la matrice par dc) OU (Exception :DIV_PAR_0 dénominateur nul
+     *Entraine : (Retourne la division de la matrice par dc) OU (Exception : dénominateur nul
      *dc == 0)
      */
 template <class NType>
@@ -295,28 +283,21 @@ CMatrix<NType> CMatrix<NType>::operator/(double dc)
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 }
 
-
-/** \brief Surchage de l'opérateur +
-     *
-     *E:
-     *\param MATParam CMatrix la matrice à ajouter
-     *Necessite : Néant
-     *S :
-     *\return CMatrix
-     *Entraine : (Retourne l'addition des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
-     */
 template <class NType>
-CMatrix<NType> CMatrix<NType>::operator+(CMatrix MATParam)
+CMatrix<NType> CMatrix<NType>::operator+(CMatrix<NType> MATParam)
 {
     if(uiMATCol != MATParam.uiMATCol || uiMATRow != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
 
-    NType **ppTab = ppMATMatrix;
+    NType ** ppTab = static_cast< NType** >(malloc(uiMATRow * sizeof(NType *)));
+    for(unsigned int i=0; i<uiMATRow; i++)
+        ppTab[i] = static_cast< NType* >(malloc(uiMATCol * sizeof(NType)));
+
 	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoopRow][uiLoopCol] += MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
+			ppTab[uiLoopRow][uiLoopCol] = ppMATMatrix[uiLoopRow][uiLoopCol] + MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
 		}
 	}
 	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
@@ -326,16 +307,13 @@ CMatrix<NType> CMatrix<NType>::operator+(CMatrix MATParam)
 
 
 
-/** \brief Surchage de l'opérateur -
-     *
-     *E:
-     *\param MATParam CMatrix la matrice que l'on soustrait
-     *Necessite : Les valeurs de MATParam sont supérieurs à celles de this si les matrices contiennent des
-     * unsigned int
-     *S :
-     *\return CMatrix
-     *Entraine : (Retourne la soustraction des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
-     */
+/** \brief
+ *Peut-être problème si NType = unsigned int et que l'on soustrait le + petit par le plus grand
+ * \param
+ * \param
+ * \return
+ *
+ */
 template <class NType>
 CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 {
@@ -353,15 +331,6 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 }
 
-/** \brief Surchage de l'opérateur *
-     *
-     *E:
-     *\param MATParam CMatrix la matrice que que l'on veut multiplier
-     *Necessite : Rien
-     *S :
-     *\return CMatrix
-     *Entraine : (Retourne la multiplication des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne peuvent pas être multipliées à cause de leurs tailles)
-     */
 template <class NType>
 CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
 {
@@ -389,13 +358,6 @@ CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
 
 }
 
-/** \brief Affichage de la matrice
-     *
-     *E:Néant
-     *Necessite : Rien
-     *S :Néant
-     *Entraine : (Affiche la matrice)
-     */
 template <class NType>
 void CMatrix<NType>::MATPrint()
 {
@@ -410,13 +372,6 @@ void CMatrix<NType>::MATPrint()
 	}
 }
 
-/** \brief Transposition de la matrice
-     *
-     *E:Néant
-     *Necessite : Rien
-     *S :CMatrix
-     *Entraine : (retourne la transposée de la matrice)
-     */
 template <class NType>
 CMatrix<NType> CMatrix<NType>::MATTranspose()
 {
@@ -434,7 +389,17 @@ CMatrix<NType> CMatrix<NType>::MATTranspose()
 }
 
 
+template <class NType>
+unsigned int CMatrix<NType>::getRow()
+{
+    return uiMATRow;
+}
 
+template <class NType>
+unsigned int CMatrix<NType>::getCol()
+{
+    return uiMATCol;
+}
 
 
 

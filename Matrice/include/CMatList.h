@@ -1,10 +1,9 @@
-
 #ifndef C_MAT_LIST_H
 #define C_MAT_LIST_H
 
 #include <string>
-#include <list>
 #include <vector>
+#include <list>
 #include <iostream>
 #include <assert.h>
 
@@ -19,7 +18,9 @@ private:
 	unsigned int uiMTLLength;
 
 public:
-	void MTLadd(CMatrix<NType> MATParam);
+    CMatList<NType>();
+
+	void MTLadd(CMatrix<NType> &MATParam);
 
 	void MTLMultByConst(double C);
 
@@ -33,50 +34,37 @@ public:
 
 };
 
-
+template <typename NType>
+CMatList<NType>::CMatList()
+{
+    uiMTLLength = 0;
+}
 
 template <class NType>
-void CMatList<NType>::MTLadd(CMatrix<NType> MATParam)
+void CMatList<NType>::MTLadd(CMatrix<NType> &MATParam)
 {
-    printf("test");
     lMTLList.push_back(MATParam);
-    printf("test");
 }
 
 template <class NType>
 void CMatList<NType>::MTLMultByConst(double C)
 {
-    for (unsigned int loop = 0; loop <= uiMTLLength; loop++)
-    {
-        (lMTLList.At(loop)*C).MATPrint();
-    }
 }
 
 template <class NType>
 void CMatList<NType>::MTLDivByConst(double C)
 {
-    for (unsigned int loop = 0; loop <= uiMTLLength; loop++)
-    {
-        (lMTLList.At(loop)/C).MATPrint();
-    }
 }
 
 template <class NType>
 void CMatList<NType>::MTLSum()
 {
-    /*CMatrix<NType> c;
-    typename list<CMatrix<NType> >::iterator it;
-    for(it = lMTLList.begin(); it++ != lMTLList.end(); it++)
+    CMatrix<NType> * c = new CMatrix<NType>(lMTLList.at(0).getRow(), lMTLList.at(0).getCol());
+    for(unsigned int i=0; i<lMTLList.size(); i++)
     {
-        c = *it + *(it++);
+        *c = *c + lMTLList.at(i);
     }
-    c.MATPrint();*/
-    CMatrix<NType> *MATResult = new CMatrix<NType>(lMTLList.at(0).MATgetRow(),lMTLList.at(0).MATgetCol());
-    for (unsigned int loop = 0; loop <= uiMTLLength; loop++)
-    {
-        *MATResult =*MATResult + lMTLList.at(loop);
-    }
-    MATResult->MATPrint();
+    c->MATPrint();
 }
 
 template <class NType>
@@ -90,4 +78,4 @@ void CMatList<NType>::MTLProduct()
 }
 
 
-#endif // C_MAT_LIST_H
+#endif

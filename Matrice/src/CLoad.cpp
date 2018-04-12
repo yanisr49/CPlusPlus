@@ -1,4 +1,3 @@
-
 #include <string>
 #include <stdlib.h>
 #include <iostream>
@@ -59,4 +58,3 @@ string CLoad::getFirst()
 {
     return sLODListFilename.front();
 }
-
