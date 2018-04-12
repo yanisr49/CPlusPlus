@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # depslib dependency file v1.0
 1523349775 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\main.cpp
 	<iostream>
@@ -131,6 +132,209 @@
 1523526283 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cmatrix.cpp
 	"CMatrix.h"
 
+=======
+# depslib dependency file v1.0
+1523379132 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<CMatList.h>
+	<CLoad.h>
+
+1523345147 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cexception.cpp
+	"CException.h"
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+
+1523374700 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cexception.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+
+1523347386 D
+
+1523384415 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cload.cpp
+	<string>
+	<stdlib.h>
+	<iostream>
+	<assert.h>
+	"CLoad.h"
+
+1523006317 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\main.cpp
+	<iostream>
+
+1523006317 
+
+1523006448 gin/master
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CMatList.h"
+
+1523385388 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cload.h
+	<string>
+	<iostream>
+	<assert.h>
+	<fstream>
+	<list>
+	"CMatrix.h"
+	"CMatList.h"
+
+1523384475 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cmatlist.h
+	<string>
+	<list>
+	<iostream>
+	<assert.h>
+	"CMatrix.h"
+
+1523384032 c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\include\cmatrix.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	<stdlib.h>
+	"CException.h"
+
+1523384444 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cmatlist.cpp
+	<string>
+	<iostream>
+	<assert.h>
+	<list>
+	"CMatList.h"
+
+1523294089 cebdc64755278daeb4b308f7ec3dbc25dd9a1
+
+1523345494 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cexception.cpp
+	"CException.h"
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+
+1523006548 c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\include\cexception.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+
+1523347386 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cload.cpp
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CLoad.h"
+
+1523347386 c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\include\cload.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CMatList.h"
+
+1523347386 c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\include\cmatlist.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CMatrix.h"
+
+1523350650 c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\include\cmatrix.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CException.h"
+
+1523347386 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cmatlist.cpp
+
+1523006508 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\src\cmatrix.cpp
+
+1523006448 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cmatrix.cpp
+
+1523525270 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<CMatList.h>
+	<CLoad.h>
+
+1523529013 c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\include\cmatlist.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	"CMatrix.h"
+
+1523528887 c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\include\cmatrix.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+	<stdlib.h>
+	"CException.h"
+
+1523525270 c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\include\cexception.h
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+
+1523525270 c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\include\cload.h
+	<string>
+	<iostream>
+	<assert.h>
+	<fstream>
+	<list>
+	"CMatrix.h"
+	"CMatList.h"
+
+1523345147 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\src\cexception.cpp
+	"CException.h"
+	<string>
+	<vector>
+	<list>
+	<iostream>
+	<assert.h>
+
+1523527768 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\src\cload.cpp
+	<string>
+	<stdlib.h>
+	<iostream>
+	<assert.h>
+	"CLoad.h"
+
+1523525270 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\src\cmatlist.cpp
+	<string>
+	<iostream>
+	<assert.h>
+	<list>
+	"CMatList.h"
+
+1523006508 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\matrice\src\cmatrix.cpp
+
+>>>>>>> 038852243f194254dc8a55b9a872b8c004daede0
 =======
 # depslib dependency file v1.0
 1523379132 source:c:\users\richard yanis\documents\polytech 2017\c++\projet\cplusplus\matrice\main.cpp
