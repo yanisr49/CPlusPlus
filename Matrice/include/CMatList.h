@@ -44,16 +44,26 @@ template <class NType>
 void CMatList<NType>::MTLadd(CMatrix<NType> &MATParam)
 {
     lMTLList.push_back(MATParam);
+
 }
 
 template <class NType>
 void CMatList<NType>::MTLMultByConst(double C)
 {
+    for (unsigned int loop = 0; loop < lMTLList.size(); loop++)
+    {
+        (lMTLList.at(loop)*C).MATPrint();
+    }
+
 }
 
 template <class NType>
 void CMatList<NType>::MTLDivByConst(double C)
 {
+    for (unsigned int loop = 0; loop < lMTLList.size(); loop++)
+    {
+        (lMTLList.at(loop)/C).MATPrint();
+    }
 }
 
 template <class NType>

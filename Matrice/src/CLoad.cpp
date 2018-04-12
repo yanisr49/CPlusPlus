@@ -46,7 +46,7 @@ void CLoad::LODLoadFromFile()
         }else
             throw new CException(WRONG_TYPE);
     }
-    lMatList->MTLSum();
+    lMatList->MTLDivByConst(2);
 }
 
 

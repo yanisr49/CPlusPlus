@@ -95,14 +95,56 @@ public:
      */
 	CMatrix operator/(double dc);
 
+	/** \brief Surchage de l'opérateur +
+     *
+     *E:
+     *\param MATParam CMatrix la matrice à ajouter
+     *Necessite : Néant
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne l'addition des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
+     */
 	CMatrix operator+(CMatrix<NType> MATParam);
 
+	/** \brief Surchage de l'opérateur -
+     *
+     *E:
+     *\param MATParam CMatrix la matrice que l'on soustrait
+     *Necessite : Les valeurs de MATParam sont supérieurs à celles de this si les matrices contiennent des
+     * unsigned int
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne la soustraction des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
+     */
 	CMatrix operator-(CMatrix MATParam);
 
+	/** \brief Surchage de l'opérateur *
+     *
+     *E:
+     *\param MATParam CMatrix la matrice que que l'on veut multiplier
+     *Necessite : Rien
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne la multiplication des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne peuvent pas être multipliées à cause de leurs tailles)
+     */
 	CMatrix operator*(CMatrix MATParam);
 
+	/** \brief Affichage de la matrice
+     *
+     *E:Néant
+     *Necessite : Rien
+     *S :Néant
+     *Entraine : (Affiche la matrice)
+     */
 	void MATPrint();
 
+	/** \brief Transposition de la matrice
+     *
+     *E:Néant
+     *Necessite : Rien
+     *S :CMatrix
+     *Entraine : (retourne la transposée de la matrice)
+     */
 	CMatrix MATTranspose();
 
     unsigned int getRow();
@@ -185,7 +227,19 @@ template <class NType>
     }
     ppMATMatrix = ppTab;
 }
+//getter et setter
 
+template <class NType>
+unsigned int CMatrix<NType>::getRow()
+{
+    return uiMATRow;
+}
+
+template <class NType>
+unsigned int CMatrix<NType>::getCol()
+{
+    return uiMATCol;
+}
 
 //methods
 /** \brief Surchage de l'opérateur =
@@ -236,7 +290,7 @@ CMatrix<NType>& CMatrix<NType>::operator*(double dc)
 			ppTab[uiLoopRow][uiLoopCol] *= dc;
 		}
 	}
-	return new CMatrix(uiMATRow,uiMATCol,ppTab);
+	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
 }
 
 template <class NType>
@@ -280,9 +334,18 @@ CMatrix<NType> CMatrix<NType>::operator/(double dc)
 			ppTab[uiLoopRow][uiLoopCol] /= dc;
 		}
 	}
-	return new CMatrix(uiMATRow,uiMATCol,ppTab);
+	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
 }
 
+/** \brief Surchage de l'opérateur +
+     *
+     *E:
+     *\param MATParam CMatrix la matrice à ajouter
+     *Necessite : Néant
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne l'addition des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
+     */
 template <class NType>
 CMatrix<NType> CMatrix<NType>::operator+(CMatrix<NType> MATParam)
 {
@@ -307,13 +370,16 @@ CMatrix<NType> CMatrix<NType>::operator+(CMatrix<NType> MATParam)
 
 
 
-/** \brief
- *Peut-être problème si NType = unsigned int et que l'on soustrait le + petit par le plus grand
- * \param
- * \param
- * \return
- *
- */
+/** \brief Surchage de l'opérateur -
+     *
+     *E:
+     *\param MATParam CMatrix la matrice que l'on soustrait
+     *Necessite : Les valeurs de MATParam sont supérieurs à celles de this si les matrices contiennent des
+     * unsigned int
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne la soustraction des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
+     */
 template <class NType>
 CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 {
@@ -331,6 +397,15 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 }
 
+/** \brief Surchage de l'opérateur *
+     *
+     *E:
+     *\param MATParam CMatrix la matrice que que l'on veut multiplier
+     *Necessite : Rien
+     *S :
+     *\return CMatrix
+     *Entraine : (Retourne la multiplication des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne peuvent pas être multipliées à cause de leurs tailles)
+     */
 template <class NType>
 CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
 {
@@ -355,9 +430,15 @@ CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
 		}
 	}
 	return pMATResult; //Verifier si on ne doit pas faire un retour par référence (ou un truc comme ça)
-
 }
 
+/** \brief Affichage de la matrice
+     *
+     *E:Néant
+     *Necessite : Rien
+     *S :Néant
+     *Entraine : (Affiche la matrice)
+     */
 template <class NType>
 void CMatrix<NType>::MATPrint()
 {
@@ -372,6 +453,13 @@ void CMatrix<NType>::MATPrint()
 	}
 }
 
+/** \brief Transposition de la matrice
+     *
+     *E:Néant
+     *Necessite : Rien
+     *S :CMatrix
+     *Entraine : (retourne la transposée de la matrice)
+     */
 template <class NType>
 CMatrix<NType> CMatrix<NType>::MATTranspose()
 {
@@ -387,20 +475,6 @@ CMatrix<NType> CMatrix<NType>::MATTranspose()
 	}
 	return pMATResult;
 }
-
-
-template <class NType>
-unsigned int CMatrix<NType>::getRow()
-{
-    return uiMATRow;
-}
-
-template <class NType>
-unsigned int CMatrix<NType>::getCol()
-{
-    return uiMATCol;
-}
-
 
 
 
