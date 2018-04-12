@@ -2,6 +2,7 @@
 #define C_MAT_LIST_H
 
 #include <string>
+#include <vector>
 #include <list>
 #include <iostream>
 #include <assert.h>
@@ -17,7 +18,9 @@ private:
 	unsigned int uiMTLLength;
 
 public:
-	void MTLadd(CMatrix<NType> MATParam);
+    CMatList<NType>();
+
+	void MTLadd(CMatrix<NType> &MATParam);
 
 	void MTLMultByConst(double C);
 
@@ -31,14 +34,16 @@ public:
 
 };
 
-
+template <typename NType>
+CMatList<NType>::CMatList()
+{
+    uiMTLLength = 0;
+}
 
 template <class NType>
-void CMatList<NType>::MTLadd(CMatrix<NType> MATParam)
+void CMatList<NType>::MTLadd(CMatrix<NType> &MATParam)
 {
-    printf("test");
     lMTLList.push_back(MATParam);
-    printf("test");
 }
 
 template <class NType>
@@ -54,7 +59,7 @@ void CMatList<NType>::MTLDivByConst(double C)
 template <class NType>
 void CMatList<NType>::MTLSum()
 {
-    CMatrix<NType> c;
+    CMatrix<NType> * c = new CMatrix<NType>();
     typename list<CMatrix<NType> >::iterator it;
     for(it = lMTLList.begin(); it++ != lMTLList.end(); it++)
     {

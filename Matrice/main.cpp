@@ -8,9 +8,12 @@ using namespace std;
 
 int main()
 {
-    char * c = "test.txt";
+    string c = "matrice1.txt";
     CLoad l;
     l.LODAddFilename(c);
+    c = "matrice2.txt";
+    l.LODAddFilename(c);
+
     l.LODLoadFromFile();
     system("pause");
     return 0;

@@ -7,7 +7,7 @@
 void CLoad::LODLoadFromFile()
 {
     string sData ("");
-    CMatList<double> lMatList;
+    CMatList<double> * lMatList = new CMatList<double>();
     list<string>::iterator it;
 
     for(it = sLODListFilename.begin(); it != sLODListFilename.end(); it++)
@@ -42,12 +42,11 @@ void CLoad::LODLoadFromFile()
 
             CMatrix<double> * matrice = new CMatrix<double>(uiNbRow, uiNbCol, ppdMatrix);
             matrice->MATPrint();
-            printf("yes");
-            lMatList.MTLadd(*matrice);
-            printf("test");
+            lMatList->MTLadd(*matrice);
         }else
             throw new CException(WRONG_TYPE);
     }
+    lMatList->MTLSum();
 }
 
 
