@@ -3,9 +3,10 @@
 #define CEXCEPTION_H
 
 #define POINTEUR_NULL   1
-#define TAB_DEPPASSE    2
+#define TAB_DEPASSE     2
 #define DIV_PAR_0       3
 #define BAD_SIZE_OF_MAT 4
+#define WRONG_TYPE      5
 
 #include <string>
 #include <vector>
