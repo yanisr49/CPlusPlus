@@ -5,6 +5,7 @@
 #include <list>
 #include <iostream>
 #include <assert.h>
+
 /********************************************//**
 * \brief Constructeur par défaut
 ***********************************************/
@@ -25,6 +26,7 @@ CException::CException(unsigned int uiVal)
 {
 	//ctor
 	uiEXCValeur = uiVal;
+	std::cout <<"Erreur numero " << uiVal << std::endl;
 }
 
 /********************************************//**
@@ -33,5 +35,13 @@ CException::CException(unsigned int uiVal)
 CException::~CException()
 {
 	//dtor
+}
+
+
+/** \brief Affiche l'exception
+ */
+void CException::EXCAfficheErreur()
+{
+    std::cout <<"Erreur numero " << uiEXCValeur << std::endl;
 }
 

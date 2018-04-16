@@ -52,6 +52,10 @@ public:
 	***********************************************/
 	void SetuiEXCValeur(unsigned int uiVal) { uiEXCValeur = uiVal; }
 
+	/** \brief Affiche l'exception
+    */
+	void EXCAfficheErreur();
+
 protected:
 
 private:
