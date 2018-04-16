@@ -210,9 +210,7 @@ template <class NType>
     uiMATRow = MATParam.uiMATRow;
 	uiMATCol = MATParam.uiMATCol;
 
-    ppMATMatrix = static_cast< NType** >(malloc(uiMATRow * sizeof(NType *)));
-    for(unsigned int i=0; i<uiMATRow; i++)
-        ppMATMatrix[i] = static_cast< NType* >(malloc(uiMATCol * sizeof(NType)));
+    ppMATMatrix = MATCreateTab(uiMATRow, uiMATCol);
 
     for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
     {
@@ -238,13 +236,11 @@ template <class NType>
     uiMATRow = uiRow;
     uiMATCol = uiCol;
 
-    NType ** ppTab = static_cast< NType** >(malloc(uiRow * sizeof(NType *)));
-    for(unsigned int i=0; i<uiRow; i++)
-        ppTab[i] = static_cast< NType* >(malloc(uiCol * sizeof(NType)));
+    NType **ppTab = MATCreateTab(uiMATRow,uiMATCol);
 
-    for (unsigned int uiLoopRow = 0; uiLoopRow < uiRow; uiLoopRow++)
+    for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
     {
-        for (unsigned int uiLoopCol = 0; uiLoopCol < uiCol; uiLoopCol++)
+        for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
         {
             ppTab[uiLoopRow][uiLoopCol] = 0;
         }
@@ -294,9 +290,7 @@ void CMatrix<NType>::operator=(CMatrix<NType> * MATParam)
     uiMATRow = MATParam->getRow();
 	uiMATCol = MATParam->getCol();
 
-    NType ** ppTab = static_cast< NType** >(malloc(uiMATRow * sizeof(NType *)));
-    for(unsigned int i=0; i<uiMATRow; i++)
-        ppTab[i] = static_cast< NType* >(malloc(uiMATCol * sizeof(NType)));
+    NType **ppTab = MATCreateTab(uiMATRow,uiMATCol);
 
 	 for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	 {
@@ -346,12 +340,12 @@ CMatrix<NType>& CMatrix<NType>::operator*(double dConstant)
 template <class NType>
 CMatrix<NType> operator*(double dConstant, CMatrix<NType> MATParam)
 {
-	NType **ppTab = MATParam.ppMATMatrix;
+	NType **ppTab = MATCreateTab(MATParam.uiMATRow,MATParam.uiMATCol);
 	for (unsigned int uiLoopRow = 0; uiLoopRow < MATParam.uiMATRow; uiLoopRow++)
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < MATParam.uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoopRow][uiLoopCol] *= dConstant;
+			ppTab[uiLoopRow][uiLoopCol] = MATParam.ppMATMatrix[uiLoopRow][uiLoopCol] * dConstant;
 		}
 	}
 
@@ -376,12 +370,12 @@ CMatrix<NType>& CMatrix<NType>::operator/(double dConstant)
         throw new CException(DIV_PAR_0);
     }
 
-	NType **ppTab = ppMATMatrix;
+	NType **ppTab = MATCreateTab(uiMATRow,uiMATCol);
 	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoopRow][uiLoopCol] /= dConstant;
+			ppTab[uiLoopRow][uiLoopCol] = ppMATMatrix[uiLoopRow][uiLoopCol] / dConstant;
 		}
 	}
 	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
@@ -402,9 +396,7 @@ CMatrix<NType> CMatrix<NType>::operator+(CMatrix<NType> MATParam)
     if(uiMATCol != MATParam.uiMATCol || uiMATRow != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
 
-    NType ** ppTab = static_cast< NType** >(malloc(uiMATRow * sizeof(NType *)));
-    for(unsigned int i=0; i<uiMATRow; i++)
-        ppTab[i] = static_cast< NType* >(malloc(uiMATCol * sizeof(NType)));
+    NType **ppTab = MATCreateTab(uiMATRow,uiMATCol);
 
 	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
@@ -436,12 +428,12 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 	 if(uiMATCol != MATParam.uiMATCol || uiMATRow != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
 
-    NType **ppTab = ppMATMatrix;//verifier si ça ne modifie pas un des params
+    NType **ppTab = MATCreateTab(uiMATRow,uiMATCol);
 	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoopRow][uiLoopCol] -= MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
+			ppTab[uiLoopRow][uiLoopCol] = ppMATMatrix[uiLoopRow][uiLoopCol] - MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
 		}
 	}
 	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
@@ -459,6 +451,8 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 template <class NType>
 CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
 {
+    MATPrint();
+    cout << uiMATCol << MATParam.uiMATRow << endl;
 	if(uiMATCol != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
 
@@ -531,8 +525,8 @@ template <class NType>
 NType** CMatrix<NType>::MATCreateTab(unsigned int uiRow, unsigned int uiCol)
 {
     NType ** ppTab = static_cast< NType** >(malloc(uiRow * sizeof(NType *)));
-    for(unsigned int i=0; i<uiRow; i++)
-    ppTab[i] = static_cast< NType* >(malloc(uiCol * sizeof(NType)));
+    for(unsigned int uiLoop=0; uiLoop<uiRow; uiLoop++)
+    ppTab[uiLoop] = static_cast< NType* >(malloc(uiCol * sizeof(NType)));
 
     return ppTab;
 }

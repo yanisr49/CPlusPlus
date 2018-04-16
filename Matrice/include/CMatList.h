@@ -200,7 +200,7 @@ void CMatList<NType>::MTLAltPlusMinus()
      *Entraine :(Affiche le produit de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille)
      */
 template <class NType>
-void CMatList<NType>::MTLProduct()
+void CMatList<NType>::MTLProduct()//réécrire cette fonction
 {
     CMatrix<NType> * pMATResult = new CMatrix<NType>(lMTLList.at(0).MATgetRow(), lMTLList.at(lMTLList.size()-1).MATgetCol());
     try{

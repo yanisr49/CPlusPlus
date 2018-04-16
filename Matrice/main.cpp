@@ -14,7 +14,7 @@ int main()
 
     /* On demande à l'utilisateur le noms des differents fichier */
     string sFileName;
-    cout << "Entrer \"quitter\" pour voir les resultats des matrices entrer" << endl;
+    cout << "Entrer \"quitter\" pour voir les resultats des matrices entrees" << endl;
     do {
         cout << "Nom du fichier : " << endl;
         cin >> sFileName;
