@@ -30,12 +30,13 @@
 	<assert.h>
 	"CLoad.h"
 
-1523531328 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\main.cpp
+1523896765 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\main.cpp
 	<iostream>
 	<stdio.h>
 	<stdlib.h>
 	<CMatList.h>
 	<CLoad.h>
+	<string>
 
 1523006317 
 
@@ -101,14 +102,14 @@
 	<iostream>
 	<assert.h>
 
-1523892973 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cload.cpp
+1523896765 source:c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\src\cload.cpp
 	<string>
 	<stdlib.h>
 	<iostream>
 	<assert.h>
 	"CLoad.h"
 
-1523531328 c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\include\cload.h
+1523896765 c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\include\cload.h
 	<string>
 	<iostream>
 	<assert.h>
@@ -125,7 +126,7 @@
 	<assert.h>
 	"CMatrix.h"
 
-1523895926 c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\include\cmatrix.h
+1523897742 c:\users\romain\onedrive\documents\cours polytech 3a\semestre 2\projetc+plus\matrice\include\cmatrix.h
 	<string>
 	<vector>
 	<list>

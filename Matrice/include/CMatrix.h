@@ -93,7 +93,7 @@ public:
      *Entraine : (Retourne la division de la matrice par dConstant) OU (Exception : dénominateur nul
      *dConstant == 0)
      */
-	CMatrix operator/(double dConstant);
+	CMatrix& operator/(double dConstant);
 
 	/** \brief Surchage de l'opérateur +
      *
@@ -147,6 +147,14 @@ public:
      */
 	CMatrix MATTranspose();
 
+
+
+
+	NType** MATCreateTab(unsigned int uiRow, unsigned int uiCol);
+
+
+
+
 	/** \brief Getter du nombre de ligne de la matrice
      *E : Néant
      *Necessite : Rien
@@ -164,6 +172,7 @@ public:
      *Entraine :(Retourne le nombre de colonne de la matrice)
      */
     unsigned int MATgetCol();
+
 
 };
 
@@ -311,12 +320,13 @@ void CMatrix<NType>::operator=(CMatrix<NType> * MATParam)
  template <class NType>
 CMatrix<NType>& CMatrix<NType>::operator*(double dConstant)
 {
-	NType **ppTab = ppMATMatrix;
+	NType **ppTab = MATCreateTab(uiMATRow,uiMATCol);
+
 	for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			ppTab[uiLoopRow][uiLoopCol] *= dConstant;
+			ppTab[uiLoopRow][uiLoopCol] = ppMATMatrix[uiLoopRow][uiLoopCol] * dConstant;
 		}
 	}
 	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
@@ -359,11 +369,11 @@ CMatrix<NType> operator*(double dConstant, CMatrix<NType> MATParam)
      *dConstant == 0)
      */
 template <class NType>
-CMatrix<NType> CMatrix<NType>::operator/(double dConstant)
+CMatrix<NType>& CMatrix<NType>::operator/(double dConstant)
 {
     if(dConstant == 0)
     {
-        throw new CException(DIV_PAR_0);;
+        throw new CException(DIV_PAR_0);
     }
 
 	NType **ppTab = ppMATMatrix;
@@ -517,6 +527,15 @@ CMatrix<NType> CMatrix<NType>::MATTranspose()
 	return pMATResult;
 }
 
+template <class NType>
+NType** CMatrix<NType>::MATCreateTab(unsigned int uiRow, unsigned int uiCol)
+{
+    NType ** ppTab = static_cast< NType** >(malloc(uiRow * sizeof(NType *)));
+    for(unsigned int i=0; i<uiRow; i++)
+    ppTab[i] = static_cast< NType* >(malloc(uiCol * sizeof(NType)));
+
+    return ppTab;
+}
 
 
 
