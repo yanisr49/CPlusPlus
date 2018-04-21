@@ -1,0 +1,9 @@
+﻿  main.cpp
+c:\users\richard yanis\documents\polytech 2017\c++\projet_matrice\cplusplus-master\cplusplus-master\matrice\main.cpp(4): fatal error C1083: Impossible d'ouvrir le fichier include : 'CMatList.h' : No such file or directory
+  CException.cpp
+c:\users\richard yanis\documents\polytech 2017\c++\projet_matrice\cplusplus-master\cplusplus-master\matrice\src\cexception.cpp(1): fatal error C1083: Impossible d'ouvrir le fichier include : 'CException.h' : No such file or directory
+  CLoad.cpp
+c:\users\richard yanis\documents\polytech 2017\c++\projet_matrice\cplusplus-master\cplusplus-master\matrice\src\cload.cpp(5): fatal error C1083: Impossible d'ouvrir le fichier include : 'CLoad.h' : No such file or directory
+  CMatList.cpp
+  CMatrix.cpp
+  Génération de code en cours...
