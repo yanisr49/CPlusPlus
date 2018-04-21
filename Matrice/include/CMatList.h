@@ -120,7 +120,7 @@ CMatList<NType>::~CMatList()
 {
     for (unsigned int uiLoop = 0; uiLoop < lMTLList.size(); uiLoop++)
     {
-        delete lMTLList.at(uiLoop);
+        delete &lMTLList.at(uiLoop);
     }
 }
 
@@ -259,8 +259,7 @@ void CMatList<NType>::MTLProduct()
         delete pMATResult;
 
     }
-    catch(CException* EXCErreur){EXCErreur->EXCAfficheErreur();
-    }
+    catch(CException* EXCErreur){EXCErreur->EXCAfficheErreur();}
 
 }
 

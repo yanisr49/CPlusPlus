@@ -10,7 +10,13 @@ using namespace std;
 int main()
 {
     /* Création de l'instance qui effectura les differents calcul */
-    CLoad * pLODList = new CLoad();
+    CLoad * pLODList;
+    try {
+        pLODList = new CLoad();
+    }catch(CException* EXCErreur){
+        EXCErreur->EXCAfficheErreur();
+    }
+
 
     /* On demande à l'utilisateur le noms des differents fichier */
     string sFileName;
@@ -29,8 +35,7 @@ int main()
 
     /* On récupère toutes les matrices a partir des fichiers donnés */
     try{
-        CMatList<double> * pMTLList = new CMatList<double>();
-        pMTLList = pLODList->LODLoadFromFile<double>();
+        CMatList<double> * pMTLList = pLODList->LODLoadFromFile<double>();
 
         cout << "Mulitplication par constantes :" << endl;
         pMTLList->MTLMultByConst(dConstante);
@@ -42,9 +47,11 @@ int main()
         pMTLList->MTLAltPlusMinus();
         cout << "Produit :" << endl;
         pMTLList->MTLProduct();
-    }catch(CException * EXCErreur)
-    {
-        //EXCErreur->EXCAfficheErreur();
+
+        delete pLODList;
+        delete pMTLList;
+    }catch(CException* EXCErreur){
+        EXCErreur->EXCAfficheErreur();
     }
 
     /* On affiche les résultats voulu */

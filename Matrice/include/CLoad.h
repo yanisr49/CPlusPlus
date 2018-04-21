@@ -64,6 +64,7 @@ CMatList<NType> * CLoad::LODLoadFromFile()
             matrice->MATPrint();
             cout << endl;
             lMatList->MTLadd(*matrice);
+            delete matrice;
         }else
             throw new CException(WRONG_TYPE);
     }
