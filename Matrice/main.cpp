@@ -32,9 +32,9 @@ int main()
         CMatList<double> * pMTLList = new CMatList<double>();
         pMTLList = pLODList->LODLoadFromFile<double>();
 
-        cout << "Mulitplié par constantes :" << endl;
+        cout << "Mulitplication par constantes :" << endl;
         pMTLList->MTLMultByConst(dConstante);
-        cout << "Divisé par constantes :" << endl;
+        cout << "Division par constantes :" << endl;
         pMTLList->MTLDivByConst(dConstante);
         cout << "Somme :" << endl;
         pMTLList->MTLSum();

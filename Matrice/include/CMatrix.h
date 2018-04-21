@@ -61,6 +61,16 @@ public:
      */
 	CMatrix(unsigned int uiRow, unsigned int uiCol);
 
+	 /** \brief Destructeur
+     *
+     *E:Rien
+     *Necessite: Néant
+     *S : Rien
+     *Entraine : (L'objet est correctement détruit)
+     */
+	~CMatrix();
+
+
 	/** \brief Surchage de l'opérateur =
      *
      *E:
@@ -80,7 +90,7 @@ public:
      *\return CMatrix
      *Entraine : (Retourne le produit de la matrice par dConstant)
      */
-	CMatrix& operator*(double dConstant);
+	CMatrix* operator*(double dConstant);
 
 
     /** \brief Surchage de l'opérateur /
@@ -93,7 +103,7 @@ public:
      *Entraine : (Retourne la division de la matrice par dConstant) OU (Exception : dénominateur nul
      *dConstant == 0)
      */
-	CMatrix& operator/(double dConstant);
+	CMatrix* operator/(double dConstant);
 
 	/** \brief Surchage de l'opérateur +
      *
@@ -104,7 +114,7 @@ public:
      *\return CMatrix
      *Entraine : (Retourne l'addition des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
      */
-	CMatrix operator+(CMatrix<NType> MATParam);
+	CMatrix* operator+(CMatrix<NType> MATParam);
 
 	/** \brief Surchage de l'opérateur -
      *
@@ -116,7 +126,7 @@ public:
      *\return CMatrix
      *Entraine : (Retourne la soustraction des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
      */
-	CMatrix operator-(CMatrix MATParam);
+	CMatrix* operator-(CMatrix MATParam);
 
 	/** \brief Surchage de l'opérateur *
      *
@@ -127,7 +137,7 @@ public:
      *\return CMatrix
      *Entraine : (Retourne la multiplication des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne peuvent pas être multipliées à cause de leurs tailles)
      */
-	CMatrix operator*(CMatrix MATParam);
+	CMatrix* operator*(CMatrix MATParam);
 
 	/** \brief Affichage de la matrice
      *
@@ -247,6 +257,16 @@ template <class NType>
     }
     ppMATMatrix = ppTab;
 }
+
+template <class NType>
+ CMatrix<NType>::~CMatrix()
+ {
+     for (unsigned int uiLoopRow = 0; uiLoopRow < uiMATRow; uiLoopRow++)
+    {
+            free(ppMATMatrix[uiLoopRow]);
+    }
+    free(ppMATMatrix);
+ }
 //getter et setter
 
 /** \brief Getter du nombre de ligne de la matrice
@@ -287,8 +307,8 @@ unsigned int CMatrix<NType>::MATgetCol()
 template <class NType>
 void CMatrix<NType>::operator=(CMatrix<NType> * MATParam)
 {
-    uiMATRow = MATParam->getRow();
-	uiMATCol = MATParam->getCol();
+    uiMATRow = MATParam->MATgetRow();
+	uiMATCol = MATParam->MATgetCol();
 
     NType **ppTab = MATCreateTab(uiMATRow,uiMATCol);
 
@@ -312,7 +332,7 @@ void CMatrix<NType>::operator=(CMatrix<NType> * MATParam)
      *Entraine : (Retourne le produit de la matrice par dConstant)
      */
  template <class NType>
-CMatrix<NType>& CMatrix<NType>::operator*(double dConstant)
+CMatrix<NType> * CMatrix<NType>::operator*(double dConstant)
 {
 	NType **ppTab = MATCreateTab(uiMATRow,uiMATCol);
 
@@ -323,7 +343,8 @@ CMatrix<NType>& CMatrix<NType>::operator*(double dConstant)
 			ppTab[uiLoopRow][uiLoopCol] = ppMATMatrix[uiLoopRow][uiLoopCol] * dConstant;
 		}
 	}
-	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
+	//cout << "coucou" << endl;
+	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 }
 
 
@@ -338,7 +359,7 @@ CMatrix<NType>& CMatrix<NType>::operator*(double dConstant)
  *Entraine : (Retourne le produit de la matrice par dConstant)
  */
 template <class NType>
-CMatrix<NType> operator*(double dConstant, CMatrix<NType> MATParam)
+CMatrix<NType>* operator*(double dConstant, CMatrix<NType> MATParam)
 {
 	NType **ppTab = MATCreateTab(MATParam.uiMATRow,MATParam.uiMATCol);
 	for (unsigned int uiLoopRow = 0; uiLoopRow < MATParam.uiMATRow; uiLoopRow++)
@@ -363,7 +384,7 @@ CMatrix<NType> operator*(double dConstant, CMatrix<NType> MATParam)
      *dConstant == 0)
      */
 template <class NType>
-CMatrix<NType>& CMatrix<NType>::operator/(double dConstant)
+CMatrix<NType>* CMatrix<NType>::operator/(double dConstant)
 {
     if(dConstant == 0)
     {
@@ -378,7 +399,7 @@ CMatrix<NType>& CMatrix<NType>::operator/(double dConstant)
 			ppTab[uiLoopRow][uiLoopCol] = ppMATMatrix[uiLoopRow][uiLoopCol] / dConstant;
 		}
 	}
-	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
+	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 }
 
 /** \brief Surchage de l'opérateur +
@@ -391,7 +412,7 @@ CMatrix<NType>& CMatrix<NType>::operator/(double dConstant)
      *Entraine : (Retourne l'addition des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
      */
 template <class NType>
-CMatrix<NType> CMatrix<NType>::operator+(CMatrix<NType> MATParam)
+CMatrix<NType>* CMatrix<NType>::operator+(CMatrix<NType> MATParam)
 {
     if(uiMATCol != MATParam.uiMATCol || uiMATRow != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
@@ -405,7 +426,7 @@ CMatrix<NType> CMatrix<NType>::operator+(CMatrix<NType> MATParam)
 			ppTab[uiLoopRow][uiLoopCol] = ppMATMatrix[uiLoopRow][uiLoopCol] + MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
 		}
 	}
-	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
+	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 
 }
 
@@ -423,7 +444,7 @@ CMatrix<NType> CMatrix<NType>::operator+(CMatrix<NType> MATParam)
      *Entraine : (Retourne la soustraction des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille)
      */
 template <class NType>
-CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
+CMatrix<NType>* CMatrix<NType>::operator-(CMatrix MATParam)
 {
 	 if(uiMATCol != MATParam.uiMATCol || uiMATRow != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
@@ -436,7 +457,7 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
 			ppTab[uiLoopRow][uiLoopCol] = ppMATMatrix[uiLoopRow][uiLoopCol] - MATParam.ppMATMatrix[uiLoopRow][uiLoopCol];
 		}
 	}
-	return *(new CMatrix(uiMATRow,uiMATCol,ppTab));
+	return new CMatrix(uiMATRow,uiMATCol,ppTab);
 }
 
 /** \brief Surchage de l'opérateur *
@@ -449,10 +470,8 @@ CMatrix<NType> CMatrix<NType>::operator-(CMatrix MATParam)
      *Entraine : (Retourne la multiplication des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne peuvent pas être multipliées à cause de leurs tailles)
      */
 template <class NType>
-CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
+CMatrix<NType>* CMatrix<NType>::operator*(CMatrix MATParam)
 {
-    MATPrint();
-    cout << uiMATCol << MATParam.uiMATRow << endl;
 	if(uiMATCol != MATParam.uiMATRow)
         throw new CException(BAD_SIZE_OF_MAT);
 
@@ -474,7 +493,7 @@ CMatrix<NType> CMatrix<NType>::operator*(CMatrix MATParam)
             }
 		}
 	}
-	return *pMATResult; //Verifier si on ne doit pas faire un retour par référence (ou un truc comme ça)
+	return pMATResult; //Verifier si on ne doit pas faire un retour par référence (ou un truc comme ça)
 }
 
 /** \brief Affichage de la matrice
@@ -491,7 +510,7 @@ void CMatrix<NType>::MATPrint()
 	{
 		for (unsigned int uiLoopCol = 0; uiLoopCol < uiMATCol; uiLoopCol++)
 		{
-			cout << ppMATMatrix[uiLoopRow][uiLoopCol] << " ";
+			cout << ppMATMatrix[uiLoopRow][uiLoopCol] << "\t";
 
 		}
 		cout << endl;
@@ -526,7 +545,7 @@ NType** CMatrix<NType>::MATCreateTab(unsigned int uiRow, unsigned int uiCol)
 {
     NType ** ppTab = static_cast< NType** >(malloc(uiRow * sizeof(NType *)));
     for(unsigned int uiLoop=0; uiLoop<uiRow; uiLoop++)
-    ppTab[uiLoop] = static_cast< NType* >(malloc(uiCol * sizeof(NType)));
+        ppTab[uiLoop] = static_cast< NType* >(malloc(uiCol * sizeof(NType)));
 
     return ppTab;
 }

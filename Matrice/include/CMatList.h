@@ -28,6 +28,15 @@ public:
      */
     CMatList<NType>();
 
+    /** \brief Destructeur
+     *
+     *E:Rien
+     *Necessite: Néant
+     *S : Rien
+     *Entraine : (L'objet est correctement détruit)
+     */
+    ~CMatList();
+
     /** \brief Ajoute une CMatrix à notre liste
      *
      *E: MATParam & CMatrix
@@ -98,6 +107,24 @@ CMatList<NType>::CMatList()
     uiMTLLength = 0;
 }
 
+
+/** \brief Destructeur
+     *
+     *E:Rien
+     *Necessite: Néant
+     *S : Rien
+     *Entraine : (L'objet est correctement détruit)
+     */
+template <typename NType>
+CMatList<NType>::~CMatList()
+{
+    for (unsigned int uiLoop = 0; uiLoop < lMTLList.size(); uiLoop++)
+    {
+        delete lMTLList.at(uiLoop);
+    }
+}
+
+
 /** \brief Ajoute une CMatrix à notre liste
 *
 *E: MATParam & CMatrix
@@ -124,7 +151,10 @@ void CMatList<NType>::MTLMultByConst(double dConstant)
 {
     for (unsigned int uiLoop = 0; uiLoop < lMTLList.size(); uiLoop++)
     {
-        (lMTLList.at(uiLoop)*dConstant).MATPrint();
+        CMatrix<NType> *MATRes = (lMTLList.at(uiLoop)*dConstant);
+        MATRes->MATPrint();
+        delete MATRes;
+
     }
 
 }
@@ -141,7 +171,9 @@ void CMatList<NType>::MTLDivByConst(double dConstant)
 {
     for (unsigned int uiLoop = 0; uiLoop < lMTLList.size(); uiLoop++)
     {
-        (lMTLList.at(uiLoop)/dConstant).MATPrint();
+        CMatrix<NType> *MATRes = (lMTLList.at(uiLoop)/dConstant);
+        MATRes->MATPrint();
+        delete MATRes;
     }
 }
 
@@ -159,9 +191,12 @@ void CMatList<NType>::MTLSum()
     try{
         for(unsigned int uiLoop=0; uiLoop<lMTLList.size(); uiLoop++)
         {
-            *pMATResult = *pMATResult + lMTLList.at(uiLoop);
+            CMatrix<NType> *pMATResult2 = *pMATResult + lMTLList.at(uiLoop);
+            delete pMATResult;
+            pMATResult = pMATResult2;
         }
         pMATResult->MATPrint();
+        delete pMATResult;
     }
     catch(CException* EXCErreur){EXCErreur->EXCAfficheErreur();}
 }
@@ -182,11 +217,20 @@ void CMatList<NType>::MTLAltPlusMinus()
         for(unsigned int uiLoop=0; uiLoop<lMTLList.size(); uiLoop++)
         {
             if(uiLoop%2 == 0)
-                *pMATResult = *pMATResult + lMTLList.at(uiLoop);
+            {
+                CMatrix<NType> *pMATResult2 = *pMATResult + lMTLList.at(uiLoop);
+                delete pMATResult;
+                pMATResult = pMATResult2;
+            }
             else
-                *pMATResult = *pMATResult - lMTLList.at(uiLoop);
+            {
+                CMatrix<NType> *pMATResult2 = *pMATResult - lMTLList.at(uiLoop);
+                delete pMATResult;
+                pMATResult = pMATResult2;
+            }
         }
         pMATResult->MATPrint();
+        delete pMATResult;
     }
     catch(CException* EXCErreur){EXCErreur->EXCAfficheErreur();
     }
@@ -200,15 +244,20 @@ void CMatList<NType>::MTLAltPlusMinus()
      *Entraine :(Affiche le produit de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille)
      */
 template <class NType>
-void CMatList<NType>::MTLProduct()//réécrire cette fonction
+void CMatList<NType>::MTLProduct()
 {
-    CMatrix<NType> * pMATResult = new CMatrix<NType>(lMTLList.at(0).MATgetRow(), lMTLList.at(lMTLList.size()-1).MATgetCol());
+    CMatrix<NType> * pMATResult = new CMatrix<NType>(lMTLList.at(0));
+
     try{
-        for(unsigned int uiLoop=0; uiLoop<lMTLList.size(); uiLoop++)
+        for(unsigned int uiLoop=1; uiLoop<lMTLList.size(); uiLoop++)
         {
-            *pMATResult = *pMATResult * lMTLList.at(uiLoop);
+            CMatrix<NType> *pMATResult2 = *pMATResult * lMTLList.at(uiLoop);
+            delete pMATResult;
+            pMATResult = pMATResult2;
         }
         pMATResult->MATPrint();
+        delete pMATResult;
+
     }
     catch(CException* EXCErreur){EXCErreur->EXCAfficheErreur();
     }
