@@ -159,11 +159,16 @@ public:
 
 
 
-
+    /** \brief Alloue un tableau de dimension 2 représentant une matrice
+     *E:
+     * \param uiRow unsigned int le nombre de lignes de la matrice
+     * \param uiCol unsigned int le nombre de colonnes de la matrice
+     *Necessite : Rien
+     *S:
+     * \return NType**
+     *Entraine: (retourne un tableau de dimension 2 de NType correctement alloué)
+     */
 	NType** MATCreateTab(unsigned int uiRow, unsigned int uiCol);
-
-
-
 
 	/** \brief Getter du nombre de ligne de la matrice
      *E : Néant
@@ -258,6 +263,13 @@ template <class NType>
     ppMATMatrix = ppTab;
 }
 
+/** \brief Destructeur
+ *
+ *E:Rien
+ *Necessite: Néant
+ *S : Rien
+ *Entraine : (L'objet est correctement détruit)
+ */
 template <class NType>
  CMatrix<NType>::~CMatrix()
  {
@@ -521,7 +533,8 @@ void CMatrix<NType>::MATPrint()
      *
      *E:Néant
      *Necessite : Rien
-     *S :CMatrix
+     *S :
+     *\return CMatrix
      *Entraine : (retourne la transposée de la matrice)
      */
 template <class NType>
@@ -540,6 +553,16 @@ CMatrix<NType> CMatrix<NType>::MATTranspose()
 	return pMATResult;
 }
 
+
+/** \brief Alloue un tableau de dimension 2 représentant une matrice
+ *E:
+ * \param uiRow unsigned int le nombre de lignes de la matrice
+ * \param uiCol unsigned int le nombre de colonnes de la matrice
+ *Necessite : Rien
+ *S:
+ * \return NType**
+ *Entraine: (retourne un tableau de dimension 2 de NType correctement alloué)
+ */
 template <class NType>
 NType** CMatrix<NType>::MATCreateTab(unsigned int uiRow, unsigned int uiCol)
 {
