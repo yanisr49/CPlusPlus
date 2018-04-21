@@ -26,7 +26,6 @@ CException::CException(unsigned int uiVal)
 {
 	//ctor
 	uiEXCValeur = uiVal;
-	std::cout <<"Erreur numero " << uiVal << std::endl;
 }
 
 /********************************************//**

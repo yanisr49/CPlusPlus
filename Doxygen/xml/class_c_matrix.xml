@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_c_matrix" kind="class" language="C++" prot="public">
+    <compoundname>CMatrix</compoundname>
+    <includes refid="_c_matrix_8h" local="no">CMatrix.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>NType</declname>
+        <defname>NType</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_c_matrix_1afe00c4a521a35fe9ca34c4b6591dced8" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int CMatrix&lt; NType &gt;::uiMATRow</definition>
+        <argsstring></argsstring>
+        <name>uiMATRow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="19" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_matrix_1ad10c46e516b0c773c37506882acd4276" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int CMatrix&lt; NType &gt;::uiMATCol</definition>
+        <argsstring></argsstring>
+        <name>uiMATCol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="21" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_matrix_1ac74720212944a0f9c352da6d4c119cef" prot="private" static="no" mutable="no">
+        <type>NType **</type>
+        <definition>NType** CMatrix&lt; NType &gt;::ppMATMatrix</definition>
+        <argsstring></argsstring>
+        <name>ppMATMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="23" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_c_matrix_1aea90f94b891d3503bfaf8d96fc29211a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CMatrix&lt; NType &gt;::CMatrix</definition>
+        <argsstring>(unsigned int uiRow, unsigned int uiCol, NType **ppTab)</argsstring>
+        <name>CMatrix</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>uiRow</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>uiCol</declname>
+        </param>
+        <param>
+          <type>NType **</type>
+          <declname>ppTab</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur à 3 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uiRow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int le nombre de lignes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uiCol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int le ombre de colonnes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppTab</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>NType** le tableau de deux dimensions représentant les données de la matrices (de type Ntype) Necessite: uiRow et uiCol correspndent à la taille du tableau ppTab S : Rien Entraine : (L&apos;objet est initialisé) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="38" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="207" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1ab61bbc107f7bbfaf9671050cd352073f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CMatrix&lt; NType &gt;::CMatrix</definition>
+        <argsstring>(const CMatrix &amp;MATParam)</argsstring>
+        <name>CMatrix</name>
+        <param>
+          <type>const <ref refid="class_c_matrix" kindref="compound">CMatrix</ref> &amp;</type>
+          <declname>MATParam</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur de recopie. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>MATParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> la matrice à recopier Necessite : Néant S : Rien Entraine : (L&apos;objet est initialisé en une copie de MATParam) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="50" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="223" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a7ca77bafc5a56aecf8ffc5105156ee90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CMatrix&lt; NType &gt;::CMatrix</definition>
+        <argsstring>(unsigned int uiRow, unsigned int uiCol)</argsstring>
+        <name>CMatrix</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>uiRow</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>uiCol</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur à 2 arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uiRow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int le nombre de lignes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uiCol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int le ombre de colonnes Necessite: Néant S : Rien Entraine : (L&apos;objet est initialisé avec une matrice de 0)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uiRow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int le nombre de lignes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uiCol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int le nombre de colonnes Necessite: Néant S : Rien Entraine : (L&apos;objet est initialisé avec une matrice de 0) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="62" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="249" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1afa5673d430fae43acab10ffeeb095283" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CMatrix&lt; NType &gt;::~CMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>~CMatrix</name>
+        <briefdescription>
+<para>Destructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para>E:Rien Necessite: Néant S : Rien Entraine : (L&apos;objet est correctement détruit) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="71" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="274" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a35433005cc92fbc8b2ba423512868f83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CMatrix&lt; NType &gt;::operator=</definition>
+        <argsstring>(CMatrix&lt; NType &gt; *MATParam)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref>&lt; NType &gt; *</type>
+          <declname>MATParam</declname>
+        </param>
+        <briefdescription>
+<para>Surchage de l&apos;opérateur =. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>MATParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> la matrice à recopier Necessite : Néant S : Rien Entraine : (L&apos;objet devient une copie de MATParam) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="82" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="320" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a6697afd56277b7fbaf2ea3dd58908b0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> *</type>
+        <definition>CMatrix&lt; NType &gt; * CMatrix&lt; NType &gt;::operator*</definition>
+        <argsstring>(double dConstant)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>double</type>
+          <declname>dConstant</declname>
+        </param>
+        <briefdescription>
+<para>Surchage de l&apos;opérateur *. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dConstant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>double le double à multiplier Necessite : Néant S : </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> Entraine : (Retourne le produit de la matrice par dConstant) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="93" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="347" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a2185b433ab81589edc934dce0333a571" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> *</type>
+        <definition>CMatrix&lt; NType &gt; * CMatrix&lt; NType &gt;::operator/</definition>
+        <argsstring>(double dConstant)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>double</type>
+          <declname>dConstant</declname>
+        </param>
+        <briefdescription>
+<para>Surchage de l&apos;opérateur /. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dConstant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>double le double à diviser Necessite : Néant S : </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> Entraine : (Retourne la division de la matrice par dConstant) OU (Exception : dénominateur nul dConstant == 0) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="106" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="399" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a93d55e6cfb24e37f30f146206d4b2b54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> *</type>
+        <definition>CMatrix&lt; NType &gt; * CMatrix&lt; NType &gt;::operator+</definition>
+        <argsstring>(CMatrix&lt; NType &gt; MATParam)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref>&lt; NType &gt;</type>
+          <declname>MATParam</declname>
+        </param>
+        <briefdescription>
+<para>Surchage de l&apos;opérateur +. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>MATParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> la matrice à ajouter Necessite : Néant S : </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> Entraine : (Retourne l&apos;addition des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="117" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="427" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1adfc6d4a3892551d796c6c3984ec58e01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> *</type>
+        <definition>CMatrix&lt; NType &gt; * CMatrix&lt; NType &gt;::operator-</definition>
+        <argsstring>(CMatrix MATParam)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref></type>
+          <declname>MATParam</declname>
+        </param>
+        <briefdescription>
+<para>Surchage de l&apos;opérateur -. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>MATParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> la matrice que l&apos;on soustrait Necessite : Les valeurs de MATParam sont supérieurs à celles de this si les matrices contiennent des unsigned int S : </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> Entraine : (Retourne la soustraction des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne sont pas de la même taille) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="129" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="459" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a03d764a1917d179a685f45ffb8a357eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> *</type>
+        <definition>CMatrix&lt; NType &gt; * CMatrix&lt; NType &gt;::operator*</definition>
+        <argsstring>(CMatrix MATParam)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref></type>
+          <declname>MATParam</declname>
+        </param>
+        <briefdescription>
+<para>Surchage de l&apos;opérateur *. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>MATParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> la matrice que que l&apos;on veut multiplier Necessite : Rien S : </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> Entraine : (Retourne la multiplication des deux matrices) OU (Exception :BAD_SIZE_OF_MAT les deux matrices ne peuvent pas être multipliées à cause de leurs tailles) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="140" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="485" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a8532303372ea568a63afc2663f3c25e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CMatrix&lt; NType &gt;::MATPrint</definition>
+        <argsstring>()</argsstring>
+        <name>MATPrint</name>
+        <briefdescription>
+<para>Affichage de la matrice. </para>        </briefdescription>
+        <detaileddescription>
+<para>E:Néant Necessite : Rien S :Néant Entraine : (Affiche la matrice) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="149" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="519" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a5ab2a320adaa7e3b1107ff1c910a54bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref></type>
+        <definition>CMatrix&lt; NType &gt; CMatrix&lt; NType &gt;::MATTranspose</definition>
+        <argsstring>()</argsstring>
+        <name>MATTranspose</name>
+        <briefdescription>
+<para>Transposition de la matrice. </para>        </briefdescription>
+        <detaileddescription>
+<para>E:Néant Necessite : Rien S :<ref refid="class_c_matrix" kindref="compound">CMatrix</ref> Entraine : (retourne la transposée de la matrice)</para><para>E:Néant Necessite : Rien S : <simplesect kind="return"><para><ref refid="class_c_matrix" kindref="compound">CMatrix</ref> Entraine : (retourne la transposée de la matrice) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="158" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="541" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a425a6e308d4f7f9f1a0c1e47f6659e55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>NType **</type>
+        <definition>NType ** CMatrix&lt; NType &gt;::MATCreateTab</definition>
+        <argsstring>(unsigned int uiRow, unsigned int uiCol)</argsstring>
+        <name>MATCreateTab</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>uiRow</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>uiCol</declname>
+        </param>
+        <briefdescription>
+<para>Alloue un tableau de dimension 2 représentant une matrice E: </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uiRow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int le nombre de lignes de la matrice </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uiCol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int le nombre de colonnes de la matrice Necessite : Rien S: </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NType** Entraine: (retourne un tableau de dimension 2 de NType correctement alloué) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="171" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="567" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a9e38588f643b54437516c1e21f5530a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int CMatrix&lt; NType &gt;::MATgetRow</definition>
+        <argsstring>()</argsstring>
+        <name>MATgetRow</name>
+        <briefdescription>
+<para>Getter du nombre de ligne de la matrice E : Néant Necessite : Rien S: </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>unsigned int le nombre de ligne de la matrice Entraine :(Retourne le nombre de ligne de la matrice) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="180" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="292" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_matrix_1a67b254c73be0c58c848aaae984f6e83b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int CMatrix&lt; NType &gt;::MATgetCol</definition>
+        <argsstring>()</argsstring>
+        <name>MATgetCol</name>
+        <briefdescription>
+<para>Getter du nombre de colonne de la matrice E : Néant Necessite : Rien S: </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>unsigned int le nombre de colonne de la matrice Entraine :(Retourne le nombre de colonne de la matrice) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatrix.h" line="189" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="305" bodyend="308"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Matrice/include/CMatrix.h" line="16" column="1" bodyfile="Matrice/include/CMatrix.h" bodystart="15" bodyend="192"/>
+    <listofallmembers>
+      <member refid="class_c_matrix_1aea90f94b891d3503bfaf8d96fc29211a" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>CMatrix</name></member>
+      <member refid="class_c_matrix_1ab61bbc107f7bbfaf9671050cd352073f" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>CMatrix</name></member>
+      <member refid="class_c_matrix_1a7ca77bafc5a56aecf8ffc5105156ee90" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>CMatrix</name></member>
+      <member refid="class_c_matrix_1a425a6e308d4f7f9f1a0c1e47f6659e55" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>MATCreateTab</name></member>
+      <member refid="class_c_matrix_1a67b254c73be0c58c848aaae984f6e83b" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>MATgetCol</name></member>
+      <member refid="class_c_matrix_1a9e38588f643b54437516c1e21f5530a7" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>MATgetRow</name></member>
+      <member refid="class_c_matrix_1a8532303372ea568a63afc2663f3c25e6" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>MATPrint</name></member>
+      <member refid="class_c_matrix_1a5ab2a320adaa7e3b1107ff1c910a54bf" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>MATTranspose</name></member>
+      <member refid="class_c_matrix_1a6697afd56277b7fbaf2ea3dd58908b0a" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>operator*</name></member>
+      <member refid="class_c_matrix_1a03d764a1917d179a685f45ffb8a357eb" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>operator*</name></member>
+      <member refid="class_c_matrix_1a93d55e6cfb24e37f30f146206d4b2b54" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>operator+</name></member>
+      <member refid="class_c_matrix_1adfc6d4a3892551d796c6c3984ec58e01" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>operator-</name></member>
+      <member refid="class_c_matrix_1a2185b433ab81589edc934dce0333a571" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>operator/</name></member>
+      <member refid="class_c_matrix_1a35433005cc92fbc8b2ba423512868f83" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>operator=</name></member>
+      <member refid="class_c_matrix_1ac74720212944a0f9c352da6d4c119cef" prot="private" virt="non-virtual"><scope>CMatrix</scope><name>ppMATMatrix</name></member>
+      <member refid="class_c_matrix_1ad10c46e516b0c773c37506882acd4276" prot="private" virt="non-virtual"><scope>CMatrix</scope><name>uiMATCol</name></member>
+      <member refid="class_c_matrix_1afe00c4a521a35fe9ca34c4b6591dced8" prot="private" virt="non-virtual"><scope>CMatrix</scope><name>uiMATRow</name></member>
+      <member refid="class_c_matrix_1afa5673d430fae43acab10ffeeb095283" prot="public" virt="non-virtual"><scope>CMatrix</scope><name>~CMatrix</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

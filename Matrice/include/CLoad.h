@@ -12,17 +12,47 @@
 
 using namespace std;
 
+/**
+    *\brief Parse les fichiers passés en paramètres et créé une instance de la classe CMatList
+*/
 class CLoad
 {
 private :
     vector<string> sLODListFilename;
 
 public:
+    /**
+    * \brief lit les fichiers passées en paramètres et créer les instances CMatrix associées
+    *E: Néant
+    *Nécessite : Rien
+    *S:
+    * \return CMatList<NType> : instance contenant toutes les matrices
+    *Entraine : (les matrices contenues dans les fichiers sont crées)
+    */
     template <class NType>
     CMatList<NType> * LODLoadFromFile();
+
+    /**
+    *\brief ajout le nom d'un fichier a la classe
+    *
+    *E:
+    *\param sFilename string : nom du fichier a ajouter
+    *Nécessite : Rien
+    *S : Néant
+    *Entraine : (Le nom du fichier est ajouté à la classe)
+    */
     void LODAddFilename(string sFilename);
 };
 
+/**
+* \brief lit les fichiers passées en paramètres et créer les instances CMatrix associées
+*E: Néant
+*Nécessite : Rien
+*S:
+* \return CMatList<NType> : instance contenant toutes les matrices
+*Entraine : (les matrices contenues dans les fichiers sont crées) OU (CException : WRONG_TYPE, le fichier contient des matrices
+* qui ne sont pas de type double)
+*/
 template <class NType>
 CMatList<NType> * CLoad::LODLoadFromFile()
 {

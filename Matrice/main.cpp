@@ -34,7 +34,6 @@ int main()
     cin >> dConstante;
 
     /* On récupère toutes les matrices a partir des fichiers donnés */
-    try{
         CMatList<double> * pMTLList = pLODList->LODLoadFromFile<double>();
 
         cout << "Mulitplication par constantes :" << endl;
@@ -50,9 +49,7 @@ int main()
 
         delete pLODList;
         delete pMTLList;
-    }catch(CException* EXCErreur){
-        EXCErreur->EXCAfficheErreur();
-    }
+
 
     /* On affiche les résultats voulu */
     //pLOAList->

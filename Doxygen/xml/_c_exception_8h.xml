@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_c_exception_8h" kind="file" language="C++">
+    <compoundname>CException.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">list</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">assert.h</includes>
+    <includedby refid="_c_matrix_8h" local="yes">Matrice/include/CMatrix.h</includedby>
+    <includedby refid="_c_exception_8cpp" local="yes">Matrice/src/CException.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>list</label>
+      </node>
+      <node id="5">
+        <label>assert.h</label>
+      </node>
+      <node id="0">
+        <label>Matrice/include/CException.h</label>
+        <link refid="_c_exception_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>Matrice/include/CException.h</label>
+        <link refid="_c_exception_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Matrice/include/CLoad.h</label>
+        <link refid="_c_load_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Matrice/include/CMatList.h</label>
+        <link refid="_c_mat_list_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Matrice/src/CException.cpp</label>
+        <link refid="_c_exception_8cpp"/>
+      </node>
+      <node id="10">
+        <label>Matrice/src/CLoad.cpp</label>
+        <link refid="_c_load_8cpp"/>
+      </node>
+      <node id="9">
+        <label>Matrice/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="7">
+        <label>Matrice/include/CMatrix.h</label>
+        <link refid="_c_matrix_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_c_exception" prot="public">CException</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_c_exception_8h_1a753cfcfd202495911a280ea4fa141cd4" prot="public" static="no">
+        <name>POINTEUR_NULL</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="5" column="9" bodyfile="Matrice/include/CException.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_exception_8h_1a6aa9659075d13badf748cc8830ce70a5" prot="public" static="no">
+        <name>TAB_DEPPASSE</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="6" column="9" bodyfile="Matrice/include/CException.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_exception_8h_1af60845612862b188363eb77be83174d0" prot="public" static="no">
+        <name>DIV_PAR_0</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="7" column="9" bodyfile="Matrice/include/CException.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_exception_8h_1a46b2a38ef75b29730845d4d572b3df0a" prot="public" static="no">
+        <name>BAD_SIZE_OF_MAT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="8" column="9" bodyfile="Matrice/include/CException.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_exception_8h_1a01b7c8b594ed5d2a4761f28ab1f842a6" prot="public" static="no">
+        <name>WRONG_TYPE</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="9" column="9" bodyfile="Matrice/include/CException.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CEXCEPTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CEXCEPTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="_c_exception_8h_1a753cfcfd202495911a280ea4fa141cd4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>POINTEUR_NULL<sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="_c_exception_8h_1a6aa9659075d13badf748cc8830ce70a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TAB_DEPPASSE<sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="_c_exception_8h_1af60845612862b188363eb77be83174d0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DIV_PAR_0<sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="_c_exception_8h_1a46b2a38ef75b29730845d4d572b3df0a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BAD_SIZE_OF_MAT<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="_c_exception_8h_1a01b7c8b594ed5d2a4761f28ab1f842a6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WRONG_TYPE<sp/><sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_c_exception" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_c_exception" kindref="compound">CException</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/********************************************/</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_c_exception_1a193ebfae477160a82d6e44299af4ed10" kindref="member">CException</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/********************************************/</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_c_exception_1a193ebfae477160a82d6e44299af4ed10" kindref="member">CException</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uiVal);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/********************************************/</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_c_exception_1a8d52405a9573fceaabfe251d88d92536" kindref="member">~CException</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/********************************************/</highlight></codeline>
+<codeline lineno="44" refid="class_c_exception_1a6263472fa0336b8d9cf703b97713cd0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_c_exception_1a6263472fa0336b8d9cf703b97713cd0d" kindref="member">GetuiEXCValeur</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>uiEXCValeur;<sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/********************************************/</highlight></codeline>
+<codeline lineno="53" refid="class_c_exception_1afd382f9e32236591362e0463aafb122d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_c_exception_1afd382f9e32236591362e0463aafb122d" kindref="member">SetuiEXCValeur</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uiVal)<sp/>{<sp/>uiEXCValeur<sp/>=<sp/>uiVal;<sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_c_exception_1a5b08bb5c368b12b62781e420c37260ce" kindref="member">EXCAfficheErreur</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uiEXCValeur;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>CEXCEPTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Matrice/include/CException.h"/>
+  </compounddef>
+</doxygen>

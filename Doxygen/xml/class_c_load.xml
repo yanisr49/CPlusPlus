@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_c_load" kind="class" language="C++" prot="public">
+    <compoundname>CLoad</compoundname>
+    <includes refid="_c_load_8h" local="no">CLoad.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_c_load_1a5451b0508a97f516fa9756d37a44e9ec" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; CLoad::sLODListFilename</definition>
+        <argsstring></argsstring>
+        <name>sLODListFilename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CLoad.h" line="18" column="1" bodyfile="Matrice/include/CLoad.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_c_load_1aed1b2384d3300c5f3c2c230d88191d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class NType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_c_mat_list" kindref="compound">CMatList</ref>&lt; NType &gt; *</type>
+        <definition>CMatList&lt; NType &gt; * CLoad::LODLoadFromFile</definition>
+        <argsstring>()</argsstring>
+        <name>LODLoadFromFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CLoad.h" line="22" column="1" bodyfile="Matrice/include/CLoad.h" bodystart="27" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_load_1a9f04ca369b5cbf4ee661d9734a4f6fca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CLoad::LODAddFilename</definition>
+        <argsstring>(string sFilename)</argsstring>
+        <name>LODAddFilename</name>
+        <param>
+          <type>string</type>
+          <declname>sFilename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CLoad.h" line="23" column="1" bodyfile="Matrice/src/CLoad.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Matrice/include/CLoad.h" line="16" column="1" bodyfile="Matrice/include/CLoad.h" bodystart="15" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_c_load_1a9f04ca369b5cbf4ee661d9734a4f6fca" prot="public" virt="non-virtual"><scope>CLoad</scope><name>LODAddFilename</name></member>
+      <member refid="class_c_load_1aed1b2384d3300c5f3c2c230d88191d9f" prot="public" virt="non-virtual"><scope>CLoad</scope><name>LODLoadFromFile</name></member>
+      <member refid="class_c_load_1a5451b0508a97f516fa9756d37a44e9ec" prot="private" virt="non-virtual"><scope>CLoad</scope><name>sLODListFilename</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_9ee15f4530502836f9bab8dedeb9ccef" kind="dir">
+    <compoundname>Matrice/include</compoundname>
+    <innerfile refid="_c_exception_8h">CException.h</innerfile>
+    <innerfile refid="_c_load_8h">CLoad.h</innerfile>
+    <innerfile refid="_c_mat_list_8h">CMatList.h</innerfile>
+    <innerfile refid="_c_matrix_8h">CMatrix.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Matrice/include/"/>
+  </compounddef>
+</doxygen>

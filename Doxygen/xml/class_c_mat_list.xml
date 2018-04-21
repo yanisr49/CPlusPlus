@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_c_mat_list" kind="class" language="C++" prot="public">
+    <compoundname>CMatList</compoundname>
+    <includes refid="_c_mat_list_8h" local="no">CMatList.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>NType</declname>
+        <defname>NType</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_c_mat_list_1aa3601e399cbc0e838ab5ba14482b7358" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="class_c_matrix" kindref="compound">CMatrix</ref>&lt; NType &gt; &gt;</type>
+        <definition>vector&lt;CMatrix&lt;NType&gt; &gt; CMatList&lt; NType &gt;::lMTLList</definition>
+        <argsstring></argsstring>
+        <name>lMTLList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="16" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_mat_list_1a8497ed40173477b0125638c62090b647" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int CMatList&lt; NType &gt;::uiMTLLength</definition>
+        <argsstring></argsstring>
+        <name>uiMTLLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="18" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_c_mat_list_1a04af5d3a9d55b0a844de16a2e8728eea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CMatList&lt; NType &gt;::CMatList</definition>
+        <argsstring>()</argsstring>
+        <name>CMatList</name>
+        <briefdescription>
+<para>Constructeur par défaut. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: Néant Necessite : Rien S :Néant Entraine : (Créé un nouveau <ref refid="class_c_mat_list" kindref="compound">CMatList</ref> avec uiMTLLength = 0) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="18" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_mat_list_1a969a11dde023e942f3c81319ef233dca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CMatList&lt; NType &gt;::~CMatList</definition>
+        <argsstring>()</argsstring>
+        <name>~CMatList</name>
+        <briefdescription>
+<para>Destructeur. </para>        </briefdescription>
+        <detaileddescription>
+<para>E:Rien Necessite: Néant S : Rien Entraine : (L&apos;objet est correctement détruit) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="38" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="119" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_mat_list_1a56bd750559d3d895d7d6bf8dfdfa9235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CMatList&lt; NType &gt;::MTLadd</definition>
+        <argsstring>(CMatrix&lt; NType &gt; &amp;MATParam)</argsstring>
+        <name>MTLadd</name>
+        <param>
+          <type><ref refid="class_c_matrix" kindref="compound">CMatrix</ref>&lt; NType &gt; &amp;</type>
+          <declname>MATParam</declname>
+        </param>
+        <briefdescription>
+<para>Ajoute une <ref refid="class_c_matrix" kindref="compound">CMatrix</ref> à notre liste. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: MATParam &amp; <ref refid="class_c_matrix" kindref="compound">CMatrix</ref> Necessite : Rien S :Néant Entraine : (Ajoute MATParam à la liste CMATList) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="47" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="136" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_mat_list_1a0a866b3c0859436ab95cbf84de812547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CMatList&lt; NType &gt;::MTLMultByConst</definition>
+        <argsstring>(double dConstant)</argsstring>
+        <name>MTLMultByConst</name>
+        <param>
+          <type>double</type>
+          <declname>dConstant</declname>
+        </param>
+        <briefdescription>
+<para>Multiplie chaque matrice par un double. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: dConstant double le double par lequel on veut multiplier les matrices Necessite : Rien S :Néant Entraine : (Multiplie chacune des matrices de la liste par dConstant et les affiche) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="56" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="150" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_mat_list_1ae0c7948e0a28b2fa991dbbadf7fb9575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CMatList&lt; NType &gt;::MTLDivByConst</definition>
+        <argsstring>(double dConstant)</argsstring>
+        <name>MTLDivByConst</name>
+        <param>
+          <type>double</type>
+          <declname>dConstant</declname>
+        </param>
+        <briefdescription>
+<para>Divise chaque matrice par un double. </para>        </briefdescription>
+        <detaileddescription>
+<para>E: dConstant double le double par lequel on veut diviser les matrices Necessite : Rien S :Néant Entraine : (Divise chacune des matrices de la liste par dConstant et les affiche) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="65" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="170" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_mat_list_1a7b893e19ebefa8f9ba15dfffc65949e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CMatList&lt; NType &gt;::MTLSum</definition>
+        <argsstring>()</argsstring>
+        <name>MTLSum</name>
+        <briefdescription>
+<para>Fais la somme de toutes les matrices de la liste. </para>        </briefdescription>
+        <detaileddescription>
+<para>E:Néant Necessite : Rien S :Néant Entraine :(Affiche la somme de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="74" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="188" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_mat_list_1a297d62559bf2cddda2c4d788235f0413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CMatList&lt; NType &gt;::MTLAltPlusMinus</definition>
+        <argsstring>()</argsstring>
+        <name>MTLAltPlusMinus</name>
+        <briefdescription>
+<para>Alterne la somme et la soustraction de toutes les matrices de la liste. </para>        </briefdescription>
+        <detaileddescription>
+<para>E:Néant Necessite : Rien S :Néant Entraine :(Affiche l&apos;aternance de la somme et de la soustraction de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="84" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="213" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_mat_list_1aa86cdbcaa608aaf2d8c1dec327663e3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CMatList&lt; NType &gt;::MTLProduct</definition>
+        <argsstring>()</argsstring>
+        <name>MTLProduct</name>
+        <briefdescription>
+<para>Fais le produit de toutes les matrices de la liste. </para>        </briefdescription>
+        <detaileddescription>
+<para>E:Néant Necessite : Rien S :Néant Entraine :(Affiche le produit de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CMatList.h" line="93" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="247" bodyend="264"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Matrice/include/CMatList.h" line="14" column="1" bodyfile="Matrice/include/CMatList.h" bodystart="13" bodyend="95"/>
+    <listofallmembers>
+      <member refid="class_c_mat_list_1a04af5d3a9d55b0a844de16a2e8728eea" prot="public" virt="non-virtual"><scope>CMatList</scope><name>CMatList</name></member>
+      <member refid="class_c_mat_list_1aa3601e399cbc0e838ab5ba14482b7358" prot="private" virt="non-virtual"><scope>CMatList</scope><name>lMTLList</name></member>
+      <member refid="class_c_mat_list_1a56bd750559d3d895d7d6bf8dfdfa9235" prot="public" virt="non-virtual"><scope>CMatList</scope><name>MTLadd</name></member>
+      <member refid="class_c_mat_list_1a297d62559bf2cddda2c4d788235f0413" prot="public" virt="non-virtual"><scope>CMatList</scope><name>MTLAltPlusMinus</name></member>
+      <member refid="class_c_mat_list_1ae0c7948e0a28b2fa991dbbadf7fb9575" prot="public" virt="non-virtual"><scope>CMatList</scope><name>MTLDivByConst</name></member>
+      <member refid="class_c_mat_list_1a0a866b3c0859436ab95cbf84de812547" prot="public" virt="non-virtual"><scope>CMatList</scope><name>MTLMultByConst</name></member>
+      <member refid="class_c_mat_list_1aa86cdbcaa608aaf2d8c1dec327663e3d" prot="public" virt="non-virtual"><scope>CMatList</scope><name>MTLProduct</name></member>
+      <member refid="class_c_mat_list_1a7b893e19ebefa8f9ba15dfffc65949e5" prot="public" virt="non-virtual"><scope>CMatList</scope><name>MTLSum</name></member>
+      <member refid="class_c_mat_list_1a8497ed40173477b0125638c62090b647" prot="private" virt="non-virtual"><scope>CMatList</scope><name>uiMTLLength</name></member>
+      <member refid="class_c_mat_list_1a969a11dde023e942f3c81319ef233dca" prot="public" virt="non-virtual"><scope>CMatList</scope><name>~CMatList</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

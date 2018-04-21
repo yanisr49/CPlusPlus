@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_c_exception" kind="class" language="C++" prot="public">
+    <compoundname>CException</compoundname>
+    <includes refid="_c_exception_8h" local="no">CException.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_c_exception_1ad21813ee3aead5c2e6b0b5f7572e2853" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int CException::uiEXCValeur</definition>
+        <argsstring></argsstring>
+        <name>uiEXCValeur</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="62" column="1" bodyfile="Matrice/include/CException.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_c_exception_1a193ebfae477160a82d6e44299af4ed10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CException::CException</definition>
+        <argsstring>()</argsstring>
+        <name>CException</name>
+        <briefdescription>
+<para>Constructeur par défaut. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="23" column="1" bodyfile="Matrice/src/CException.cpp" bodystart="12" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_exception_1a4d85833c48a92b974d2c3136197398f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CException::CException</definition>
+        <argsstring>(unsigned int uiVal)</argsstring>
+        <name>CException</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>uiVal</declname>
+        </param>
+        <briefdescription>
+<para>Constructeur à 1 argument. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uiVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int la valeur de l&apos;exception </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="31" column="1" bodyfile="Matrice/src/CException.cpp" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_exception_1a8d52405a9573fceaabfe251d88d92536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CException::~CException</definition>
+        <argsstring>()</argsstring>
+        <name>~CException</name>
+        <briefdescription>
+<para>destructeur </para>        </briefdescription>
+        <detaileddescription>
+<para>Destructeur. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="36" column="1" bodyfile="Matrice/src/CException.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_exception_1a6263472fa0336b8d9cf703b97713cd0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int CException::GetuiEXCValeur</definition>
+        <argsstring>()</argsstring>
+        <name>GetuiEXCValeur</name>
+        <briefdescription>
+<para>Retourne la valeur de l&apos;exception. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>unsigned int la valeur de l&apos;exception </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="44" column="1" bodyfile="Matrice/include/CException.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_exception_1afd382f9e32236591362e0463aafb122d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CException::SetuiEXCValeur</definition>
+        <argsstring>(unsigned int uiVal)</argsstring>
+        <name>SetuiEXCValeur</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>uiVal</declname>
+        </param>
+        <briefdescription>
+<para>Change la valeur de l&apos;exception. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uiVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int la valeur de l&apos;exception </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="53" column="1" bodyfile="Matrice/include/CException.h" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_exception_1a5b08bb5c368b12b62781e420c37260ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CException::EXCAfficheErreur</definition>
+        <argsstring>()</argsstring>
+        <name>EXCAfficheErreur</name>
+        <briefdescription>
+<para>Affiche l&apos;exception. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Matrice/include/CException.h" line="57" column="1" bodyfile="Matrice/src/CException.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Matrice/include/CException.h" line="18" column="1" bodyfile="Matrice/include/CException.h" bodystart="17" bodyend="63"/>
+    <listofallmembers>
+      <member refid="class_c_exception_1a193ebfae477160a82d6e44299af4ed10" prot="public" virt="non-virtual"><scope>CException</scope><name>CException</name></member>
+      <member refid="class_c_exception_1a4d85833c48a92b974d2c3136197398f2" prot="public" virt="non-virtual"><scope>CException</scope><name>CException</name></member>
+      <member refid="class_c_exception_1a5b08bb5c368b12b62781e420c37260ce" prot="public" virt="non-virtual"><scope>CException</scope><name>EXCAfficheErreur</name></member>
+      <member refid="class_c_exception_1a6263472fa0336b8d9cf703b97713cd0d" prot="public" virt="non-virtual"><scope>CException</scope><name>GetuiEXCValeur</name></member>
+      <member refid="class_c_exception_1afd382f9e32236591362e0463aafb122d" prot="public" virt="non-virtual"><scope>CException</scope><name>SetuiEXCValeur</name></member>
+      <member refid="class_c_exception_1ad21813ee3aead5c2e6b0b5f7572e2853" prot="private" virt="non-virtual"><scope>CException</scope><name>uiEXCValeur</name></member>
+      <member refid="class_c_exception_1a8d52405a9573fceaabfe251d88d92536" prot="public" virt="non-virtual"><scope>CException</scope><name>~CException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

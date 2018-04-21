@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
+  <compound refid="class_c_exception" kind="class"><name>CException</name>
+    <member refid="class_c_exception_1ad21813ee3aead5c2e6b0b5f7572e2853" kind="variable"><name>uiEXCValeur</name></member>
+    <member refid="class_c_exception_1a193ebfae477160a82d6e44299af4ed10" kind="function"><name>CException</name></member>
+    <member refid="class_c_exception_1a4d85833c48a92b974d2c3136197398f2" kind="function"><name>CException</name></member>
+    <member refid="class_c_exception_1a8d52405a9573fceaabfe251d88d92536" kind="function"><name>~CException</name></member>
+    <member refid="class_c_exception_1a6263472fa0336b8d9cf703b97713cd0d" kind="function"><name>GetuiEXCValeur</name></member>
+    <member refid="class_c_exception_1afd382f9e32236591362e0463aafb122d" kind="function"><name>SetuiEXCValeur</name></member>
+    <member refid="class_c_exception_1a5b08bb5c368b12b62781e420c37260ce" kind="function"><name>EXCAfficheErreur</name></member>
+  </compound>
+  <compound refid="class_c_load" kind="class"><name>CLoad</name>
+    <member refid="class_c_load_1a5451b0508a97f516fa9756d37a44e9ec" kind="variable"><name>sLODListFilename</name></member>
+    <member refid="class_c_load_1aed1b2384d3300c5f3c2c230d88191d9f" kind="function"><name>LODLoadFromFile</name></member>
+    <member refid="class_c_load_1a9f04ca369b5cbf4ee661d9734a4f6fca" kind="function"><name>LODAddFilename</name></member>
+  </compound>
+  <compound refid="class_c_mat_list" kind="class"><name>CMatList</name>
+    <member refid="class_c_mat_list_1aa3601e399cbc0e838ab5ba14482b7358" kind="variable"><name>lMTLList</name></member>
+    <member refid="class_c_mat_list_1a8497ed40173477b0125638c62090b647" kind="variable"><name>uiMTLLength</name></member>
+    <member refid="class_c_mat_list_1a04af5d3a9d55b0a844de16a2e8728eea" kind="function"><name>CMatList</name></member>
+    <member refid="class_c_mat_list_1a969a11dde023e942f3c81319ef233dca" kind="function"><name>~CMatList</name></member>
+    <member refid="class_c_mat_list_1a56bd750559d3d895d7d6bf8dfdfa9235" kind="function"><name>MTLadd</name></member>
+    <member refid="class_c_mat_list_1a0a866b3c0859436ab95cbf84de812547" kind="function"><name>MTLMultByConst</name></member>
+    <member refid="class_c_mat_list_1ae0c7948e0a28b2fa991dbbadf7fb9575" kind="function"><name>MTLDivByConst</name></member>
+    <member refid="class_c_mat_list_1a7b893e19ebefa8f9ba15dfffc65949e5" kind="function"><name>MTLSum</name></member>
+    <member refid="class_c_mat_list_1a297d62559bf2cddda2c4d788235f0413" kind="function"><name>MTLAltPlusMinus</name></member>
+    <member refid="class_c_mat_list_1aa86cdbcaa608aaf2d8c1dec327663e3d" kind="function"><name>MTLProduct</name></member>
+  </compound>
+  <compound refid="class_c_matrix" kind="class"><name>CMatrix</name>
+    <member refid="class_c_matrix_1afe00c4a521a35fe9ca34c4b6591dced8" kind="variable"><name>uiMATRow</name></member>
+    <member refid="class_c_matrix_1ad10c46e516b0c773c37506882acd4276" kind="variable"><name>uiMATCol</name></member>
+    <member refid="class_c_matrix_1ac74720212944a0f9c352da6d4c119cef" kind="variable"><name>ppMATMatrix</name></member>
+    <member refid="class_c_matrix_1aea90f94b891d3503bfaf8d96fc29211a" kind="function"><name>CMatrix</name></member>
+    <member refid="class_c_matrix_1ab61bbc107f7bbfaf9671050cd352073f" kind="function"><name>CMatrix</name></member>
+    <member refid="class_c_matrix_1a7ca77bafc5a56aecf8ffc5105156ee90" kind="function"><name>CMatrix</name></member>
+    <member refid="class_c_matrix_1afa5673d430fae43acab10ffeeb095283" kind="function"><name>~CMatrix</name></member>
+    <member refid="class_c_matrix_1a35433005cc92fbc8b2ba423512868f83" kind="function"><name>operator=</name></member>
+    <member refid="class_c_matrix_1a6697afd56277b7fbaf2ea3dd58908b0a" kind="function"><name>operator*</name></member>
+    <member refid="class_c_matrix_1a2185b433ab81589edc934dce0333a571" kind="function"><name>operator/</name></member>
+    <member refid="class_c_matrix_1a93d55e6cfb24e37f30f146206d4b2b54" kind="function"><name>operator+</name></member>
+    <member refid="class_c_matrix_1adfc6d4a3892551d796c6c3984ec58e01" kind="function"><name>operator-</name></member>
+    <member refid="class_c_matrix_1a03d764a1917d179a685f45ffb8a357eb" kind="function"><name>operator*</name></member>
+    <member refid="class_c_matrix_1a8532303372ea568a63afc2663f3c25e6" kind="function"><name>MATPrint</name></member>
+    <member refid="class_c_matrix_1a5ab2a320adaa7e3b1107ff1c910a54bf" kind="function"><name>MATTranspose</name></member>
+    <member refid="class_c_matrix_1a425a6e308d4f7f9f1a0c1e47f6659e55" kind="function"><name>MATCreateTab</name></member>
+    <member refid="class_c_matrix_1a9e38588f643b54437516c1e21f5530a7" kind="function"><name>MATgetRow</name></member>
+    <member refid="class_c_matrix_1a67b254c73be0c58c848aaae984f6e83b" kind="function"><name>MATgetCol</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_c_exception_8h" kind="file"><name>CException.h</name>
+    <member refid="_c_exception_8h_1a753cfcfd202495911a280ea4fa141cd4" kind="define"><name>POINTEUR_NULL</name></member>
+    <member refid="_c_exception_8h_1a6aa9659075d13badf748cc8830ce70a5" kind="define"><name>TAB_DEPPASSE</name></member>
+    <member refid="_c_exception_8h_1af60845612862b188363eb77be83174d0" kind="define"><name>DIV_PAR_0</name></member>
+    <member refid="_c_exception_8h_1a46b2a38ef75b29730845d4d572b3df0a" kind="define"><name>BAD_SIZE_OF_MAT</name></member>
+    <member refid="_c_exception_8h_1a01b7c8b594ed5d2a4761f28ab1f842a6" kind="define"><name>WRONG_TYPE</name></member>
+  </compound>
+  <compound refid="_c_load_8h" kind="file"><name>CLoad.h</name>
+  </compound>
+  <compound refid="_c_mat_list_8h" kind="file"><name>CMatList.h</name>
+  </compound>
+  <compound refid="_c_matrix_8h" kind="file"><name>CMatrix.h</name>
+    <member refid="_c_matrix_8h_1a4f0556e767638e36fd3fc8df0ef42758" kind="function"><name>operator*</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_c_exception_8cpp" kind="file"><name>CException.cpp</name>
+  </compound>
+  <compound refid="_c_load_8cpp" kind="file"><name>CLoad.cpp</name>
+  </compound>
+  <compound refid="_c_mat_list_8cpp" kind="file"><name>CMatList.cpp</name>
+  </compound>
+  <compound refid="_c_matrix_8cpp" kind="file"><name>CMatrix.cpp</name>
+  </compound>
+  <compound refid="dir_9ee15f4530502836f9bab8dedeb9ccef" kind="dir"><name>Matrice/include</name>
+  </compound>
+  <compound refid="dir_ea0bc1b42c2b17b432e2e21cc74dc0eb" kind="dir"><name>Matrice</name>
+  </compound>
+  <compound refid="dir_e7fac2259a9b7531dd7b49eca085db2c" kind="dir"><name>Matrice/src</name>
+  </compound>
+</doxygenindex>

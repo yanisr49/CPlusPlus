@@ -109,12 +109,12 @@ CMatList<NType>::CMatList()
 
 
 /** \brief Destructeur
-     *
-     *E:Rien
-     *Necessite: Néant
-     *S : Rien
-     *Entraine : (L'objet est correctement détruit)
-     */
+ *
+ *E:Rien
+ *Necessite: Néant
+ *S : Rien
+ *Entraine : (L'objet est correctement détruit)
+ */
 template <typename NType>
 CMatList<NType>::~CMatList()
 {
@@ -139,13 +139,13 @@ void CMatList<NType>::MTLadd(CMatrix<NType> &MATParam)
 
 }
 
-	/** \brief Multiplie chaque matrice par un double
-     *
-     *E: dConstant double le double par lequel on veut multiplier les matrices
-     *Necessite : Rien
-     *S :Néant
-     *Entraine : (Multiplie chacune des matrices de la liste par dConstant et les affiche)
-     */
+/** \brief Multiplie chaque matrice par un double
+ *
+ *E: dConstant double le double par lequel on veut multiplier les matrices
+ *Necessite : Rien
+ *S :Néant
+ *Entraine : (Multiplie chacune des matrices de la liste par dConstant et les affiche)
+ */
 template <class NType>
 void CMatList<NType>::MTLMultByConst(double dConstant)
 {
@@ -159,31 +159,33 @@ void CMatList<NType>::MTLMultByConst(double dConstant)
 
 }
 
-	/** \brief Divise chaque matrice par un double
-     *
-     *E: dConstant double le double par lequel on veut diviser les matrices
-     *Necessite : Rien
-     *S :Néant
-     *Entraine : (Divise chacune des matrices de la liste par dConstant et les affiche)
-     */
+/** \brief Divise chaque matrice par un double
+ *
+ *E: dConstant double le double par lequel on veut diviser les matrices
+ *Necessite : Rien
+ *S :Néant
+ *Entraine : (Divise chacune des matrices de la liste par dConstant et les affiche) OU(Erreur : Division par 0)
+ */
 template <class NType>
 void CMatList<NType>::MTLDivByConst(double dConstant)
 {
+    try{
     for (unsigned int uiLoop = 0; uiLoop < lMTLList.size(); uiLoop++)
     {
         CMatrix<NType> *MATRes = (lMTLList.at(uiLoop)/dConstant);
         MATRes->MATPrint();
         delete MATRes;
     }
+    }catch(CException* EXCErreur){EXCErreur->EXCAfficheErreur();}
 }
 
-	/** \brief Fais la somme de toutes les matrices de la liste
-     *
-     *E:Néant
-     *Necessite : Rien
-     *S :Néant
-     *Entraine :(Affiche la somme de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille)
-     */
+/** \brief Fais la somme de toutes les matrices de la liste
+ *
+ *E:Néant
+ *Necessite : Rien
+ *S :Néant
+ *Entraine :(Affiche la somme de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille)
+ */
 template <class NType>
 void CMatList<NType>::MTLSum()
 {
@@ -201,14 +203,14 @@ void CMatList<NType>::MTLSum()
     catch(CException* EXCErreur){EXCErreur->EXCAfficheErreur();}
 }
 
-	/** \brief Alterne la somme et la soustraction de toutes les matrices de la liste
-     *
-     *E:Néant
-     *Necessite : Rien
-     *S :Néant
-     *Entraine :(Affiche l'aternance de la somme et de la soustraction de toutes les matrices de la liste)
-     *OU (Erreur : matrices de mauvaise taille)
-     */
+/** \brief Alterne la somme et la soustraction de toutes les matrices de la liste
+ *
+ *E:Néant
+ *Necessite : Rien
+ *S :Néant
+ *Entraine :(Affiche l'aternance de la somme et de la soustraction de toutes les matrices de la liste)
+ *OU (Erreur : matrices de mauvaise taille)
+ */
 template <class NType>
 void CMatList<NType>::MTLAltPlusMinus()
 {
@@ -236,13 +238,13 @@ void CMatList<NType>::MTLAltPlusMinus()
     }
 }
 
-	/** \brief Fais le produit de toutes les matrices de la liste
-     *
-     *E:Néant
-     *Necessite : Rien
-     *S :Néant
-     *Entraine :(Affiche le produit de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille)
-     */
+/** \brief Fais le produit de toutes les matrices de la liste
+ *
+ *E:Néant
+ *Necessite : Rien
+ *S :Néant
+ *Entraine :(Affiche le produit de toutes les matrices de la liste) OU (Erreur : matrices de mauvaise taille)
+ */
 template <class NType>
 void CMatList<NType>::MTLProduct()
 {
